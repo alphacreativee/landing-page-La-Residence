@@ -1,0 +1,68 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+
+  &-inner {
+    width: 100%;
+    height: 100%;
+    .swiper {
+      .image {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            180deg,
+            rgba(73, 60, 52, 0) 22%,
+            rgba(73, 60, 52, 0) 84%,
+            rgba(73, 60, 52, 0.5) 100%
+          );
+          z-index: 2;
+          pointer-events: none;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &-pagination {
+        bottom: 24px;
+        .swiper-pagination-bullet {
+          width: 8px;
+          height: 5px;
+          background-color: var(--color-white);
+          border-radius: 0px;
+          transition: width 0.4s ease;
+          opacity: 1;
+          &-active {
+            width: 40px;
+          }
+        }
+      }
+    }
+  }
+  &-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    width: max-content;
+    text-align: center;
+    h2 {
+      font-size: 30px;
+      line-height: 39px;
+      color: var(--color-white);
+      font-weight: 400;
+    }
+  }
+}

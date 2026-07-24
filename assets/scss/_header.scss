@@ -59,6 +59,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: all 0.4s ease;
+      border: 1px solid var(--color-primary);
+      &:hover {
+        background-color: transparent;
+      }
     }
     &-lang {
       display: flex;

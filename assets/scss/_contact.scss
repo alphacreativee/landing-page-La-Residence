@@ -47,12 +47,14 @@
       border-top: 1px solid #bf7e66;
       border-bottom: 1px solid #bf7e66;
       a.email {
+        width: max-content;
         font-size: 16px;
         line-height: 20px;
         color: var(--color-white);
         font-weight: 400;
       }
       a.phone {
+        width: max-content;
         font-size: 30px;
         line-height: 39px;
         color: var(--color-white);

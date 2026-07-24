@@ -216,7 +216,7 @@ function swiperFacilities() {
 
   return new Swiper(swiperEl, {
     slidesPerView: 3,
-    slidesPerGroup: 3,
+    slidesPerGroup: 1,
     spaceBetween: 24,
     speed: 1500,
     navigation: {

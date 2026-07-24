@@ -1,5 +1,5 @@
 .foods {
-  padding: 120px 40px;
+  padding: 120px 0;
   background-color: var(--color-white);
   &-heading {
     display: flex;
@@ -21,6 +21,152 @@
       color: var(--color-secondary);
       text-align: center;
       max-width: 70%;
+    }
+  }
+  &-box {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 0, 0, 0.85) 100%
+      );
+
+      z-index: 2;
+    }
+    .content {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 3;
+      padding: 32px;
+      .name {
+        font-size: 19px;
+        line-height: 25px;
+        text-transform: uppercase;
+        color: var(--color-fourth);
+        letter-spacing: 0.1em;
+      }
+      .desc {
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: var(--color-fourth);
+        padding: 8px 0;
+        border-bottom: 1px solid var(--color-fourth);
+        border-top: 1px solid var(--color-fourth);
+      }
+    }
+  }
+  &-list {
+    .swiper-pagination {
+      position: static;
+      margin-top: 40px;
+      .swiper-pagination-bullet {
+        width: 8px;
+        height: 5px;
+        background-color: var(--color-primary);
+        border-radius: 0px;
+        transition: width 0.4s ease;
+        opacity: 1;
+        &-active {
+          width: 40px;
+        }
+      }
+    }
+
+    .swiper-arrow {
+      background-color: var(--color-white);
+      width: 100px;
+      padding: 0 20px;
+      margin-top: -45px;
+      transform: translate(0);
+
+      svg {
+        width: 30px;
+        height: 11px;
+        color: var(--color-secondary);
+      }
+      &.swiper-button-disabled {
+        opacity: 0;
+      }
+      &.swiper-button-prev {
+        display: flex;
+        justify-content: flex-start;
+        left: 24px;
+      }
+      &.swiper-button-next {
+        display: flex;
+        justify-content: flex-end;
+        right: 24px;
+      }
+    }
+  }
+}
+.foods-list {
+  position: relative;
+
+  .swiper-foods {
+    overflow: hidden;
+    // padding: 0 40px;
+
+    // === 2 lớp che bên ===
+    // &::before,
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   top: 0;
+    //   bottom: 0;
+    //   width: var(--peek-width, 80px);
+    //   z-index: 5;
+    //   pointer-events: none;
+    // }
+
+    // &::before {
+    //   width: calc(var(--peek-width, 80px) + 16px); // ← Phải bằng padding-left
+    //   background-color: #aba6a0;
+    //   opacity: 0.7;
+    //   left: 0;
+    // }
+
+    // &::after {
+    //   right: 0px; // ← Phải bằng padding-right
+
+    //   opacity: 0.7;
+    //   background-color: #aba6a0;
+    // }
+
+    .swiper-wrapper {
+      align-items: stretch;
+    }
+
+    .swiper-slide {
+      width: 38%;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+      transition: opacity 0.3s ease;
+      cursor: pointer;
+      opacity: 0.5;
+      &-active {
+        opacity: 1;
+      }
+      &.swiper-slide-active {
+        opacity: 1;
+      }
+      &.swiper-slide-next {
+        opacity: 1;
+      }
+      @media (max-width: 768px) {
+        width: 78%;
+      }
     }
   }
 }

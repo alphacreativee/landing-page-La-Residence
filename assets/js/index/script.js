@@ -230,6 +230,186 @@ function swiperFacilities() {
   });
 }
 
+// function swiperFoods() {
+//   const parentSwiperEl = document.querySelector(".foods-list");
+//   if (!parentSwiperEl) return;
+//   const swiperEl = parentSwiperEl.querySelector(".swiper-foods");
+//   if (!swiperEl) return;
+
+//   const FULL_SLIDES = 2;
+//   const PEEK_RATIO = 0.12;
+//   const GAP = 24;
+
+//   const swiper = new Swiper(swiperEl, {
+//     slidesPerView: "auto",
+//     watchSlidesProgress: true,
+//     spaceBetween: GAP,
+//     loop: true,
+//     loopAdditionalSlides: 6, // dư nhiều bản sao 2 đầu, tránh hụt slide khi custom width
+//     speed: 1500,
+//     a11y: false,
+//     navigation: {
+//       nextEl: parentSwiperEl.querySelector(".swiper-button-next"),
+//       prevEl: parentSwiperEl.querySelector(".swiper-button-prev"),
+//     },
+//     pagination: {
+//       el: parentSwiperEl.querySelector(".swiper-pagination"),
+//       clickable: true,
+//     },
+//     on: {
+//       init(sw) {
+//         // Chờ 1 frame để layout/ảnh ổn định trước khi đo lần đầu
+//         requestAnimationFrame(() => applyLayout(sw));
+//       },
+//       progress(sw) {
+//         updateOpacity(sw);
+//       },
+//     },
+//   });
+
+//   function applyLayout(sw) {
+//     const containerWidth = sw.el.offsetWidth;
+
+//     // Làm tròn về số nguyên, tránh lệch do rounding khác nhau 2 bên
+//     const peek = Math.round(containerWidth * PEEK_RATIO);
+//     const usableWidth = containerWidth - peek * 2;
+//     const slideWidth = Math.round(
+//       (usableWidth - GAP * (FULL_SLIDES - 1)) / FULL_SLIDES,
+//     );
+
+//     sw.slides.forEach((slide) => {
+//       slide.style.boxSizing = "border-box"; // tránh border/padding cộng thêm làm width thực tế lệch
+//       slide.style.width = `${slideWidth}px`;
+//     });
+
+//     sw.params.slidesOffsetBefore = peek;
+//     sw.params.slidesOffsetAfter = peek;
+
+//     // Với loop mode, đổi width sau khi đã tạo xong duplicate cần rebuild lại loop
+//     // để 2 đầu đồng bộ số lượng/kích thước slide ảo
+//     sw.loopDestroy();
+//     sw.loopCreate();
+//     sw.update();
+
+//     updateOpacity(sw);
+//   }
+
+//   function updateOpacity(sw) {
+//     sw.slides.forEach((slide) => {
+//       const progress = Math.abs(slide.progress || 0);
+//       const opacity = progress <= 0.55 ? 1 : 0.35;
+//       slide.style.opacity = opacity;
+//     });
+//   }
+
+//   // Dùng ResizeObserver thay vì chỉ event resize của Swiper,
+//   // bắt được cả trường hợp container đổi kích thước do ảnh/font load xong
+//   const resizeObserver = new ResizeObserver(() => {
+//     applyLayout(swiper);
+//   });
+//   resizeObserver.observe(swiperEl);
+
+//   return swiper;
+// }
+function swiperFoods() {
+  const parentSwiperEl = document.querySelector(".foods-list");
+  if (!parentSwiperEl) return;
+  const swiperEl = parentSwiperEl.querySelector(".swiper-foods");
+  if (!swiperEl) return;
+
+  const FEATURED_COUNT = 2; // số slide hiển thị full cùng lúc
+  const SLIDE_RATIO = 0.365; // mỗi slide full chiếm 40% container -> 2 slide = 80%, còn 20% chia đều 2 bên lấp ló
+  const GAP = 24; // phải khớp spaceBetween
+
+  const swiper = new Swiper(swiperEl, {
+    slidesPerView: "auto",
+    spaceBetween: GAP,
+    loop: true,
+    speed: 1500,
+    watchSlidesProgress: true,
+    a11y: false,
+
+    slidesPerGroup: 2,
+    slidesPerGroupSkip: 0,
+    initialSlide: 2,
+    slidesOffsetBefore: 0,
+    slidesOffsetAfter: 0,
+
+    navigation: {
+      nextEl: parentSwiperEl.querySelector(".swiper-button-next"),
+      prevEl: parentSwiperEl.querySelector(".swiper-button-prev"),
+    },
+    pagination: {
+      el: parentSwiperEl.querySelector(".swiper-pagination"),
+      clickable: true,
+    },
+
+    on: {
+      init(sw) {
+        requestAnimationFrame(() => {
+          setPeekOffset(sw);
+          updateOpacity(sw);
+        });
+      },
+      resize(sw) {
+        setPeekOffset(sw);
+        updateOpacity(sw);
+      },
+      progress(sw) {
+        updateOpacity(sw);
+      },
+      setTransition(sw, duration) {
+        sw.slides.forEach((slide) => {
+          slide.style.transition = `opacity ${duration}ms ease`;
+        });
+      },
+    },
+  });
+
+  function setPeekOffset(sw) {
+    const containerWidth = sw.el.offsetWidth;
+    const slideWidth = Math.round(containerWidth * SLIDE_RATIO);
+
+    sw.slides.forEach((slide) => {
+      slide.style.boxSizing = "border-box";
+      slide.style.width = `${slideWidth}px`;
+    });
+
+    let peek = (containerWidth - FEATURED_COUNT * slideWidth - GAP) / 2;
+    peek = Math.max(peek, 28);
+    peek = Math.min(peek, containerWidth * 0.15);
+    peek = Math.round(peek);
+
+    sw.params.slidesOffsetBefore = peek;
+    sw.params.slidesOffsetAfter = peek;
+
+    // loop:true cần rebuild lại khi đổi width slide bằng tay,
+    // tránh duplicate slide bị lệch kích thước 2 đầu
+    sw.loopDestroy();
+    sw.loopCreate();
+    sw.update();
+  }
+
+  function updateOpacity(sw) {
+    const slidesWithProgress = sw.slides.map((slide, index) => ({
+      slide,
+      index,
+      absProgress: Math.abs(slide.progress || 0),
+    }));
+
+    slidesWithProgress.sort((a, b) => a.absProgress - b.absProgress);
+
+    const featuredIndexes = new Set(
+      slidesWithProgress.slice(0, FEATURED_COUNT).map((item) => item.index),
+    );
+
+    sw.slides.forEach((slide, index) => {
+      // slide.style.opacity = featuredIndexes.has(index) ? "1" : "0.35";
+    });
+  }
+
+  return swiper;
+}
 function init() {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
@@ -237,6 +417,7 @@ function init() {
   formModal();
   updateSumImageCount();
   swiperFacilities();
+  swiperFoods();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

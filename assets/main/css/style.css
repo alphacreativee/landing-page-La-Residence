@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --font: "EB Garamond", sans-serif;
   --font-body: "", sans-serif;
@@ -1100,6 +1101,63 @@ body {
   font-size: 0;
 }
 
+.custom-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1055;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-modal.is-open {
+  display: block;
+}
+
+.custom-modal.is-visible {
+  opacity: 1;
+}
+
+.custom-modal-dialog {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.custom-modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-modal-header {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 2;
+}
+
+.custom-modal-body {
+  flex: 1;
+  overflow: hidden;
+}
+
+.custom-modal .btn-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+
+/* Chặn scroll nền khi modal mở, tự set bằng JS thay vì Bootstrap */
+body.custom-modal-open {
+  overflow: hidden;
+}
+
 .lightpick {
   --color-stroke: #ccc;
   --color-bg: #fff;
@@ -1595,7 +1653,7 @@ body {
 }
 
 .facilities {
-  padding: 120px 40px 164px;
+  padding: 120px 40px;
   background-color: var(--color-third);
 }
 .facilities-heading {
@@ -1701,4 +1759,30 @@ body {
   display: flex;
   justify-content: flex-end;
   right: -30px;
+}
+
+.foods {
+  padding: 120px 40px;
+  background-color: var(--color-white);
+}
+.foods-heading {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 48px 0;
+  margin-bottom: 84px;
+}
+.foods-heading h4 {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-primary);
+  letter-spacing: 0.21em;
+  text-transform: uppercase;
+}
+.foods-heading .description {
+  font-size: 30px;
+  line-height: 39px;
+  color: var(--color-secondary);
+  text-align: center;
+  max-width: 70%;
 }

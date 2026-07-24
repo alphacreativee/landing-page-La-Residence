@@ -268,3 +268,59 @@
   content: unset;
   font-size: 0;
 }
+.custom-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1055;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-modal.is-open {
+  display: block;
+}
+
+.custom-modal.is-visible {
+  opacity: 1;
+}
+
+.custom-modal-dialog {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.custom-modal-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-modal-header {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 2;
+}
+
+.custom-modal-body {
+  flex: 1;
+  overflow: hidden;
+}
+
+.custom-modal .btn-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-secondary);
+}
+
+/* Chặn scroll nền khi modal mở, tự set bằng JS thay vì Bootstrap */
+body.custom-modal-open {
+  overflow: hidden;
+}

@@ -123,7 +123,7 @@
           </div>
           <div class="filter-section-result">
             <div class="filter-item type-1">
-              <button class="room-wrapper" type="button" data-bs-toggle="modal" data-bs-target="#modalRoomType-1">
+              <div class="room-wrapper">
                 <div class="room-column room-info">
                   <div class="title">Room Amenities</div>
                   <ul>
@@ -210,7 +210,7 @@
 
                   </ul>
                 </div>
-                <div class="room-column room-image">
+                <button class="room-column room-image" type="button" data-modal-open="modalRoomType-1">
                   <div class="room-image-default">
                     <div class="image-main">
                       <div class="image-item">
@@ -231,15 +231,13 @@
                     </div>
 
                   </div>
-                </div>
-              </button>
+                </button>
+              </div>
               <!-- swiper -->
-              <div class="modal  fade modal-custom-room" data-lenis-prevent id="modalRoomType-1"
-                data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalRoomType-1Label"
-                aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen">
-                  <div class="modal-content">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <div class="custom-modal modal-custom-room" id="modalRoomType-1" aria-hidden="true">
+                <div class="custom-modal-dialog">
+                  <div class="custom-modal-content">
+                    <button type="button" class="btn-close" data-modal-close aria-label="Close">
 
                       <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.353516 0.353516L30.3535 30.3535" stroke="currentColor" />
@@ -247,7 +245,7 @@
                       </svg>
 
                     </button>
-                    <div class="modal-body">
+                    <div class="custom-modal-body">
                       <div class="container-swiper">
                         <div class="swiper swiper-el-parallax h-100">
                           <div class="swiper-wrapper h-100">
@@ -352,7 +350,7 @@
 
             </div>
             <div class="filter-item type-2">
-              <button class="room-wrapper" type="button" data-bs-toggle="modal" data-bs-target="#modalRoomType-2">
+              <div class="room-wrapper">
                 <div class="room-column room-info">
                   <div class="title">Room Amenities</div>
                   <ul>
@@ -362,7 +360,7 @@
                           <img src="./assets/images/del/area.svg" alt="">
                         </div>
                         <div class="name">
-                          83 - 116m2
+                          84 - 116m2
                         </div>
                       </div>
                     </li>
@@ -439,11 +437,11 @@
 
                   </ul>
                 </div>
-                <div class="room-column room-image">
+                <button class="room-column room-image" type="button" data-modal-open="modalRoomType-2">
                   <div class="room-image-default">
                     <div class="image-main">
                       <div class="image-item">
-                        <img src="./assets/images/del/room-11.jpg" alt="">
+                        <img src="./assets/images/del/room-12.jpg" alt="">
                       </div>
                       <div class="image-item">
                         <img src="./assets/images/del/room-2.jpg" alt="">
@@ -460,15 +458,13 @@
                     </div>
 
                   </div>
-                </div>
-              </button>
+                </button>
+              </div>
               <!-- swiper -->
-              <div class="modal  fade modal-custom-room" data-lenis-prevent id="modalRoomType-2"
-                data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="#modalRoomType-2Label"
-                aria-hidden="true">
-                <div class="modal-dialog modal-fullscreen">
-                  <div class="modal-content">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+              <div class="custom-modal modal-custom-room" id="modalRoomType-2" aria-hidden="true">
+                <div class="custom-modal-dialog">
+                  <div class="custom-modal-content">
+                    <button type="button" class="btn-close" data-modal-close aria-label="Close">
 
                       <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0.353516 0.353516L30.3535 30.3535" stroke="currentColor" />
@@ -476,13 +472,13 @@
                       </svg>
 
                     </button>
-                    <div class="modal-body">
+                    <div class="custom-modal-body">
                       <div class="container-swiper">
                         <div class="swiper swiper-el-parallax h-100">
                           <div class="swiper-wrapper h-100">
                             <div class="swiper-slide overflow-hidden">
                               <div class="image">
-                                <img src="./assets/images/del/room-11.jpg" alt="">
+                                <img src="./assets/images/del/room-1.jpg" alt="">
                               </div>
                             </div>
                             <div class="swiper-slide overflow-hidden">
@@ -536,7 +532,11 @@
                         </div>
                         <div class="swiper-el-thumbnail">
                           <div class="swiper-wrapper">
-
+                            <div class="swiper-slide">
+                              <div class="thumbnail">
+                                <img src="./assets/images/del/room-1.jpg" alt="">
+                              </div>
+                            </div>
                             <div class="swiper-slide">
                               <div class="thumbnail">
                                 <img src="./assets/images/del/room-2.jpg" alt="">
@@ -557,11 +557,7 @@
                                 <img src="./assets/images/del/room-5.jpg" alt="">
                               </div>
                             </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-6.jpg" alt="">
-                              </div>
-                            </div>
+
                           </div>
                         </div>
                       </div>
@@ -629,7 +625,7 @@
               <div class="icon">
                 <img src="./assets/images/del/icon-6.svg" alt="">
               </div>
-              <div class="name">24-hour <br>concierge  and security</div>
+              <div class="name">24-hour <br>concierge and security</div>
             </div>
             <div class="services-item">
               <div class="icon">
@@ -789,6 +785,19 @@
               </svg>
 
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="foods" id="foods">
+      <div class="foods-inner">
+        <div class="foods-heading">
+          <h4>Food & Beverage</h4>
+
+          <div class="description">
+            Enjoy a diverse selection of restaurants and cafés within the integrated development, from signature dining
+            destinations to relaxed all-day dining venues. Whether for business meetings, family gatherings or casual
+            everyday meals, a refined culinary experience is always just moments away.
           </div>
         </div>
       </div>

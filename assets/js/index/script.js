@@ -406,7 +406,20 @@ function scrollToSection() {
     if (activeLink) activeLink.classList.add("active");
   }
 }
+function hero() {
+  const containerSwiperEl = document.querySelector(".banner .container-swiper");
+  if (!containerSwiperEl) return;
 
+  const swiperEl = containerSwiperEl.querySelector(".swiper-el-parallax");
+  if (!swiperEl) return;
+
+  const swiperParallax = initParallaxSwiper(swiperEl, {
+    pagination: {
+      el: containerSwiperEl.querySelector(".swiper-pagination"),
+      clickable: true,
+    },
+  });
+}
 function init() {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
@@ -415,6 +428,7 @@ function init() {
   updateSumImageCount();
   swiperFacilities();
   swiperFoods();
+  hero();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

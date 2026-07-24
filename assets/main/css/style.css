@@ -1896,3 +1896,128 @@ body.custom-modal-open {
     width: 78%;
   }
 }
+
+.contact-section .contact-inner {
+  position: relative;
+}
+.contact-section .contact-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.contact-section .contact-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.contact-section .contact-wrapper {
+  padding: 100px 40px 32px;
+  display: flex;
+  gap: 24px;
+}
+.contact-section .contact-form-modal,
+.contact-section .contact-sale {
+  max-width: 435px;
+  width: 100%;
+}
+.contact-section .contact-sale {
+  background-color: rgba(150, 86, 62, 0.8);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contact-section .contact-sale .title {
+  font-size: 30px;
+  line-height: 39px;
+  color: var(--color-white);
+  font-weight: 400;
+}
+.contact-section .contact-sale .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 0;
+  border-top: 1px solid #bf7e66;
+  border-bottom: 1px solid #bf7e66;
+}
+.contact-section .contact-sale .contact-info a.email {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-white);
+  font-weight: 400;
+}
+.contact-section .contact-sale .contact-info a.phone {
+  font-size: 30px;
+  line-height: 39px;
+  color: var(--color-white);
+  font-weight: 400;
+}
+.contact-section .modal-dialog {
+  margin: 0;
+}
+
+.footer-container {
+  background-color: var(--color-secondary);
+  padding: 40px;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.footer-col:first-child {
+  border-right: 1px solid var(--color-primary);
+}
+.footer-col .box {
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 100px 120px 100px;
+  gap: 32px;
+  height: 100%;
+}
+.footer-col .box .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-col .box .social ul {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+.footer-col .box .footer-menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-col .box .footer-menu ul li a {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-white);
+  font-weight: 400;
+}
+.footer-col .box .footer-copyright {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-white);
+  font-weight: 400;
+  display: flex;
+  align-items: flex-end;
+}
+.footer-col .box .footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+.footer-col .box .footer-info a,
+.footer-col .box .footer-info p {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--color-white);
+  font-weight: 400;
+  text-align: center;
+}

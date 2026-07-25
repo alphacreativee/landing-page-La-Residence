@@ -215,10 +215,20 @@ function swiperFacilities() {
   if (!swiperEl) return;
 
   return new Swiper(swiperEl, {
-    slidesPerView: 3,
+    slidesPerView: 1,
     slidesPerGroup: 1,
-    spaceBetween: 24,
+    spaceBetween: 20,
     speed: 1500,
+    breakpoints: {
+      767: {
+        slidesPerView: 2,
+        spaceBetween: 24,
+      },
+      991: {
+        slidesPerView: 3,
+        spaceBetween: 24,
+      },
+    },
     navigation: {
       nextEl: parentSwiperEl.querySelector(".swiper-button-next"),
       prevEl: parentSwiperEl.querySelector(".swiper-button-prev"),
@@ -236,9 +246,22 @@ function swiperFoods() {
   const swiperEl = parentSwiperEl.querySelector(".swiper-foods");
   if (!swiperEl) return;
 
-  const FEATURED_COUNT = 2; // số slide hiển thị full cùng lúc
-  const SLIDE_RATIO = 0.365; // mỗi slide full chiếm 40% container -> 2 slide = 80%, còn 20% chia đều 2 bên lấp ló
   const GAP = 24; // phải khớp spaceBetween
+
+  // Cấu hình theo breakpoint
+  function getBreakpointConfig() {
+    const w = window.innerWidth;
+    if (w < 767) {
+      // mobile: 1 item full width, KHÔNG peek 2 bên
+      return { featuredCount: 1, ratio: 1, initialSlide: 0, minPeek: 0 };
+    }
+    if (w < 991) {
+      // tablet: 2 item, có peek
+      return { featuredCount: 2, ratio: 0.42, initialSlide: 2, minPeek: 16 };
+    }
+    // desktop: giữ như cũ
+    return { featuredCount: 2, ratio: 0.365, initialSlide: 2, minPeek: 16 };
+  }
 
   const swiper = new Swiper(swiperEl, {
     slidesPerView: "auto",
@@ -248,9 +271,9 @@ function swiperFoods() {
     watchSlidesProgress: true,
     a11y: false,
 
-    slidesPerGroup: 2,
+    slidesPerGroup: getBreakpointConfig().featuredCount,
     slidesPerGroupSkip: 0,
-    initialSlide: 2,
+    initialSlide: getBreakpointConfig().initialSlide,
     slidesOffsetBefore: 0,
     slidesOffsetAfter: 0,
 
@@ -286,21 +309,25 @@ function swiperFoods() {
   });
 
   function setPeekOffset(sw) {
+    const { featuredCount, ratio, minPeek } = getBreakpointConfig();
+
     const containerWidth = sw.el.offsetWidth;
-    const slideWidth = Math.round(containerWidth * SLIDE_RATIO);
+    const slideWidth = Math.round(containerWidth * ratio);
 
     sw.slides.forEach((slide) => {
       slide.style.boxSizing = "border-box";
-      slide.style.width = `${slideWidth}px`;
+      // dùng setProperty + 'important' để thắng cả CSS !important từ theme/global
+      slide.style.setProperty("width", `${slideWidth}px`, "important");
     });
 
-    let peek = (containerWidth - FEATURED_COUNT * slideWidth - GAP) / 2;
-    peek = Math.max(peek, 28);
+    let peek = (containerWidth - featuredCount * slideWidth - GAP) / 2;
+    peek = Math.max(peek, minPeek);
     peek = Math.min(peek, containerWidth * 0.15);
     peek = Math.round(peek);
 
     sw.params.slidesOffsetBefore = peek;
     sw.params.slidesOffsetAfter = peek;
+    sw.params.slidesPerGroup = featuredCount;
 
     // loop:true cần rebuild lại khi đổi width slide bằng tay,
     // tránh duplicate slide bị lệch kích thước 2 đầu
@@ -310,6 +337,8 @@ function swiperFoods() {
   }
 
   function updateOpacity(sw) {
+    const { featuredCount } = getBreakpointConfig();
+
     const slidesWithProgress = sw.slides.map((slide, index) => ({
       slide,
       index,
@@ -319,7 +348,7 @@ function swiperFoods() {
     slidesWithProgress.sort((a, b) => a.absProgress - b.absProgress);
 
     const featuredIndexes = new Set(
-      slidesWithProgress.slice(0, FEATURED_COUNT).map((item) => item.index),
+      slidesWithProgress.slice(0, featuredCount).map((item) => item.index),
     );
 
     sw.slides.forEach((slide, index) => {
@@ -420,6 +449,16 @@ function hero() {
     },
   });
 }
+function headerMobile() {
+  if (window.innerWidth > 991) return;
+  const headerHam = document.getElementById("ham");
+  const menuWrapper = document.querySelector(".header-menu-wrapper");
+
+  headerHam.addEventListener("click", () => {
+    // headerHam.classList.toggle("active");
+    menuWrapper.classList.toggle("active");
+  });
+}
 function init() {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
@@ -434,6 +473,7 @@ function init() {
 document.addEventListener("DOMContentLoaded", () => {
   init();
   scrollToSection();
+  headerMobile();
 });
 
 let isLinkClicked = false;

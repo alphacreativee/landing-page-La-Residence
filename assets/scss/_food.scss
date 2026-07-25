@@ -1,13 +1,23 @@
 .foods {
   padding: 120px 0;
   background-color: var(--color-white);
+  @media (max-width: 991px) {
+    padding: 80px 0;
+  }
   &-heading {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 48px 0;
     margin-bottom: 84px;
-
+    @media (max-width: 991px) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    @media (max-width: 767px) {
+      margin-bottom: 48px;
+      padding: 20px;
+    }
     h4 {
       font-size: 14px;
       line-height: 20px;
@@ -21,6 +31,16 @@
       color: var(--color-secondary);
       text-align: center;
       max-width: 70%;
+      @media (max-width: 991px) {
+        max-width: 100%;
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+      @media (max-width: 767px) {
+        font-size: 28px;
+        line-height: 32px;
+        padding: 0;
+      }
     }
   }
   &-box {
@@ -108,11 +128,17 @@
         display: flex;
         justify-content: flex-start;
         left: 24px;
+        @media (max-width: 767px) {
+          left: 8px;
+        }
       }
       &.swiper-button-next {
         display: flex;
         justify-content: flex-end;
         right: 24px;
+        @media (max-width: 767px) {
+          right: 8px;
+        }
       }
     }
   }
@@ -153,26 +179,27 @@
     .swiper-wrapper {
       align-items: stretch;
     }
-
-    .swiper-slide {
-      width: 38%;
-      flex-shrink: 0;
-      position: relative;
-      overflow: hidden;
-      transition: opacity 0.3s ease;
-      cursor: pointer;
-      opacity: 0.5;
-      &-active {
-        opacity: 1;
-      }
-      &.swiper-slide-active {
-        opacity: 1;
-      }
-      &.swiper-slide-next {
-        opacity: 1;
-      }
-      @media (max-width: 768px) {
-        width: 78%;
+    @media (min-width: 992px) {
+      .swiper-slide {
+        width: 38%;
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+        transition: opacity 0.3s ease;
+        cursor: pointer;
+        opacity: 0.5;
+        &-active {
+          opacity: 1;
+        }
+        &.swiper-slide-active {
+          opacity: 1;
+        }
+        &.swiper-slide-next {
+          opacity: 1;
+        }
+        // @media (max-width: 768px) {
+        //   width: 78%;
+        // }
       }
     }
   }

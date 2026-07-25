@@ -4,30 +4,55 @@
             <img src="./assets/images/use/logo.svg" alt="">
         </a>
     </div>
-    <div class="header-menu">
-        <ul>
-            <li>
-                <a href="#about-us" class="hover-text-underline">About Us</a>
-            </li>
-            <li>
-                <a href="#room-types" class="hover-text-underline">Room Types</a>
-            </li>
-            <li>
-                <a href="#services" class="hover-text-underline">Services</a>
-            </li>
-            <li>
-                <a href="#facilities" class="hover-text-underline">Facilities</a>
-            </li>
-            <li>
-                <a href="#foods" class="hover-text-underline">
-                    Food & Beverages
-                </a>
-            </li>
-        </ul>
+    <div class="header-menu-wrapper">
+        <div class="header-menu">
+            <ul>
+                <li>
+                    <a href="#about-us" class="">About Us</a>
+                </li>
+                <li>
+                    <a href="#room-types" class="">Room Types</a>
+                </li>
+                <li>
+                    <a href="#services" class="">Services</a>
+                </li>
+                <li>
+                    <a href="#facilities" class="">Facilities</a>
+                </li>
+                <li>
+                    <a href="#foods" class="">
+                        Food & Beverages
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="header-lang d-flex d-lg-none">
+
+            <div class="dropdown-custom">
+                <div class="dropdown-custom-btn">
+                    <div class="value-select">
+                        <span>EN</span>
+                    </div>
+                    <div class="icon">
+
+                        <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.353516 0.353516L4.35352 4.35352L8.35352 0.353516" stroke="currentColor" />
+                        </svg>
+
+                    </div>
+                </div>
+                <div class="dropdown-custom-menu">
+                    <div class="dropdown-custom-item">
+                        <span>VI</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
     </div>
     <div class="header-box">
         <div class="box-left">
-            <div class="header-lang">
+            <div class="header-lang d-none d-lg-flex">
 
                 <div class="dropdown-custom">
                     <div class="dropdown-custom-btn">
@@ -64,6 +89,9 @@
             <button class="header-book  btn-general text-uppercase color-white" type="button" data-bs-toggle="modal"
                 data-bs-target="#modalBook">
                 book now </button>
+        </div>
+        <div class="header-ham d-flex d-lg-none btn-general text-uppercase color-white" id="ham">
+            menu
         </div>
     </div>
 </div>

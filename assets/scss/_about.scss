@@ -1,10 +1,17 @@
 .about {
   padding: 40px;
   background-color: var(--color-primary);
+  @media (max-width: 767px) {
+    padding: 20px;
+  }
   &-inner {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 24px;
+    @media (max-width: 767px) {
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
   }
   &-box {
     background-color: var(--color-third);

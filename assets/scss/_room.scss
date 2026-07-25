@@ -1,13 +1,20 @@
 .room-types {
   padding: 120px 40px 40px;
   background-color: var(--color-third);
+  @media (max-width: 991px) {
+    padding: 80px 20px 40px;
+  }
   .room {
     &-heading {
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 24px;
       margin-bottom: 84px;
-
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+        margin-bottom: 48px;
+        text-align: center;
+      }
       h4 {
         font-size: 14px;
         line-height: 20px;
@@ -19,6 +26,7 @@
         font-size: 30px;
         line-height: 39px;
         color: var(--color-secondary);
+
         @media (min-width: 992px) {
           max-width: 95%;
         }
@@ -28,6 +36,9 @@
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 24px;
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
       .room-info {
         display: flex;
         flex-direction: column;
@@ -104,6 +115,10 @@
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(3, 210px);
         gap: 2px;
+        @media (max-width: 767px) {
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: repeat(4, 120px);
+        }
         .image-item {
           position: relative;
           .sum-image {
@@ -128,6 +143,10 @@
           &:nth-child(4) {
             grid-column: 4 / 5;
             grid-row: auto / span 1;
+            @media (max-width: 767px) {
+              grid-row: 4 / 5;
+              grid-column: auto / span 1;
+            }
           }
           img {
             width: 100%;

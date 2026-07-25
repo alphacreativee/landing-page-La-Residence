@@ -1093,9 +1093,28 @@ body {
   width: 392px;
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  .modal-custom-room .container-swiper .swiper-el-thumbnail {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+  }
+}
+@media (max-width: 425px) {
+  .modal-custom-room .container-swiper .swiper-el-thumbnail {
+    width: 332px;
+  }
+}
 .modal-custom-room .container-swiper .swiper-el-thumbnail .thumbnail {
   width: 72px;
   height: 72px;
+}
+@media (max-width: 425px) {
+  .modal-custom-room .container-swiper .swiper-el-thumbnail .thumbnail {
+    width: 60px;
+    height: 60px;
+  }
 }
 .modal-custom-room .container-swiper .swiper-el-thumbnail .thumbnail:hover {
   cursor: pointer;
@@ -1175,6 +1194,11 @@ body {
 /* Chặn scroll nền khi modal mở, tự set bằng JS thay vì Bootstrap */
 body.custom-modal-open {
   overflow: hidden;
+}
+
+.swiper-el-parallax .image {
+  width: 100%;
+  height: 100%;
 }
 
 .swiper-el-parallax img {
@@ -1532,10 +1556,21 @@ body.custom-modal-open {
   padding: 40px;
   background-color: var(--color-primary);
 }
+@media (max-width: 767px) {
+  .about {
+    padding: 20px;
+  }
+}
 .about-inner {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 24px;
+}
+@media (max-width: 767px) {
+  .about-inner {
+    gap: 20px;
+    grid-template-columns: 1fr;
+  }
 }
 .about-box {
   background-color: var(--color-third);
@@ -1583,6 +1618,13 @@ body.custom-modal-open {
   gap: 24px;
   margin-bottom: 84px;
 }
+@media (max-width: 767px) {
+  .services-heading {
+    grid-template-columns: 1fr;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+}
 .services-heading h4 {
   font-size: 14px;
   line-height: 20px;
@@ -1614,6 +1656,8 @@ body.custom-modal-open {
 @media (max-width: 767px) {
   .services-list {
     grid-template-columns: 1fr;
+    padding-bottom: 0;
+    border-bottom: none;
   }
 }
 .services-grid {
@@ -1621,19 +1665,24 @@ body.custom-modal-open {
   flex-direction: column;
   gap: 50px;
 }
+@media (max-width: 767px) {
+  .services-grid {
+    gap: 0;
+  }
+}
 .services-item {
   padding-left: 32px;
   padding-right: 32px;
   display: flex;
   align-items: center;
   gap: 24px;
-  border-right: 1px solid var(--color-third);
+  border-right: 1px solid var(--color-fourth);
 }
 @media (max-width: 767px) {
   .services-item {
     padding: 24px 32px;
     border-right: none;
-    border-bottom: 1px solid var(--color-third);
+    border-bottom: 1px solid var(--color-fourth);
   }
 }
 .services-item .icon {
@@ -1655,11 +1704,23 @@ body.custom-modal-open {
   padding: 120px 40px 40px;
   background-color: var(--color-third);
 }
+@media (max-width: 991px) {
+  .room-types {
+    padding: 80px 20px 40px;
+  }
+}
 .room-types .room-heading {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 24px;
   margin-bottom: 84px;
+}
+@media (max-width: 767px) {
+  .room-types .room-heading {
+    grid-template-columns: 1fr;
+    margin-bottom: 48px;
+    text-align: center;
+  }
 }
 .room-types .room-heading h4 {
   font-size: 14px;
@@ -1682,6 +1743,11 @@ body.custom-modal-open {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 24px;
+}
+@media (max-width: 767px) {
+  .room-types .room-wrapper {
+    grid-template-columns: 1fr;
+  }
 }
 .room-types .room-wrapper .room-info {
   display: flex;
@@ -1753,6 +1819,12 @@ body.custom-modal-open {
   grid-template-rows: repeat(3, 210px);
   gap: 2px;
 }
+@media (max-width: 767px) {
+  .room-types .room-image .image-main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 120px);
+  }
+}
 .room-types .room-image .image-main .image-item {
   position: relative;
 }
@@ -1776,6 +1848,12 @@ body.custom-modal-open {
 .room-types .room-image .image-main .image-item:nth-child(2), .room-types .room-image .image-main .image-item:nth-child(3), .room-types .room-image .image-main .image-item:nth-child(4) {
   grid-column: 4/5;
   grid-row: auto/span 1;
+}
+@media (max-width: 767px) {
+  .room-types .room-image .image-main .image-item:nth-child(2), .room-types .room-image .image-main .image-item:nth-child(3), .room-types .room-image .image-main .image-item:nth-child(4) {
+    grid-row: 4/5;
+    grid-column: auto/span 1;
+  }
 }
 .room-types .room-image .image-main .image-item img {
   width: 100%;

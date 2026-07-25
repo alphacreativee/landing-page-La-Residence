@@ -41,32 +41,47 @@
     }
   }
   &-box {
+    display: flex;
+    flex-direction: column;
+    height: 100%; // lấy chiều cao từ swiper-slide (hoặc set cố định nếu cần)
+
     .image {
       width: 100%;
       aspect-ratio: 437 / 367;
+      flex-shrink: 0; // giữ nguyên tỉ lệ, không bị co lại khi content đẩy
+
       img {
         width: 100%;
         height: 100%;
         object-fit: cover;
       }
     }
+
     .content {
+      flex: 1; // tự động chiếm hết phần còn lại sau khi trừ .image
       padding: 32px;
       background-color: var(--color-white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; // đẩy content-top lên trên, content-main xuống dưới (tuỳ ý)
+
       &-top {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         margin-bottom: 48px;
+
         .number {
           font-size: 19px;
           line-height: 25px;
           color: var(--color-primary);
         }
+
         .icon {
           display: flex;
         }
       }
+
       &-main {
         .name {
           font-size: 19px;
@@ -76,6 +91,7 @@
           margin-bottom: 8px;
           text-transform: uppercase;
         }
+
         .desc {
           padding: 8px 0;
           border-bottom: 1px solid var(--color-fourth);
@@ -93,6 +109,9 @@
         padding-left: 20px;
         padding-right: 20px;
       }
+    }
+    .swiper-slide {
+      height: auto;
     }
     .swiper-pagination {
       position: static;

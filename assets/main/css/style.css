@@ -1912,9 +1912,15 @@ body.custom-modal-open {
     padding: 0;
   }
 }
+.facilities-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 .facilities-box .image {
   width: 100%;
   aspect-ratio: 437/367;
+  flex-shrink: 0;
 }
 .facilities-box .image img {
   width: 100%;
@@ -1922,8 +1928,12 @@ body.custom-modal-open {
   object-fit: cover;
 }
 .facilities-box .content {
+  flex: 1;
   padding: 32px;
   background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .facilities-box .content-top {
   display: flex;
@@ -1960,6 +1970,9 @@ body.custom-modal-open {
     padding-left: 20px;
     padding-right: 20px;
   }
+}
+.facilities-list .swiper-slide {
+  height: auto;
 }
 .facilities-list .swiper-pagination {
   position: static;

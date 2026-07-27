@@ -973,7 +973,7 @@ body {
 .modal-custom .form-input textarea:-webkit-autofill:hover,
 .modal-custom .form-input textarea:-webkit-autofill:focus,
 .modal-custom .form-input textarea:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 1000px var(--color-white) inset;
+  -webkit-box-shadow: 0 0 0 1000px var(--color-third) inset;
   -webkit-text-fill-color: var(--color-black);
   caret-color: var(--color-black);
   transition: background-color 9999s ease-in-out 0s;

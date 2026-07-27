@@ -375,6 +375,19 @@ function scrollToSection() {
   }
 
   function handleScrollClick(e, link) {
+    const targetId = link.getAttribute("href");
+
+    // Bỏ qua nếu href rỗng, chỉ là "#", hoặc không trỏ tới id hợp lệ nào
+    if (!targetId || targetId === "#" || targetId.length <= 1) {
+      return;
+    }
+
+    // Bỏ qua nếu section tương ứng không tồn tại trên trang
+    const targetEl = document.querySelector(targetId);
+    if (!targetEl) {
+      return;
+    }
+
     e.preventDefault();
     isClicking = true;
 
@@ -385,7 +398,6 @@ function scrollToSection() {
       headerMenu?.classList.remove("active");
     }
 
-    const targetId = link.getAttribute("href");
     const offset = getHeaderOffset();
 
     gsap.to(window, {

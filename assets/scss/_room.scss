@@ -94,6 +94,9 @@
           color: var(--color-primary);
           letter-spacing: 0.21em;
           text-transform: uppercase;
+          @media (max-width: 767px) {
+            padding: 0 16px;
+          }
           &.active,
           &:hover {
             background-color: var(--color-primary);

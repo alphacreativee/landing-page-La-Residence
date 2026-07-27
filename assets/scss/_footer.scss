@@ -46,6 +46,18 @@
           display: flex;
           justify-content: center;
           gap: 16px;
+          li {
+            a {
+              transition: all 0.4s ease;
+              &:hover {
+                opacity: 0.7;
+              }
+              img {
+                width: 24px;
+                height: 24px;
+              }
+            }
+          }
         }
       }
       .footer-menu {

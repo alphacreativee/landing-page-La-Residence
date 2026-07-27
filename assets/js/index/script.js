@@ -471,6 +471,38 @@ function headerMobile() {
     menuWrapper.classList.toggle("active");
   });
 }
+function animationText() {
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll(".tl-text").forEach((el) => {
+    const tlTextOne = el.querySelectorAll(".tl-text-one");
+    const tlTextTwo = el.querySelectorAll(".tl-text-two");
+    const tlTextThree = el.querySelectorAll(".tl-text-three");
+    const tlTextFour = el.querySelectorAll(".tl-text-four");
+    const tlTextFive = el.querySelectorAll(".tl-text-five");
+    const tlTextSix = el.querySelectorAll(".tl-text-six");
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        start: "top 65%",
+        once: true,
+      },
+    });
+    const animFrom = { y: 20, opacity: 0 };
+    const animTo = {
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
+      ease: "power2.out",
+    };
+
+    if (tlTextOne.length) tl.fromTo(tlTextOne, animFrom, animTo);
+    if (tlTextTwo.length) tl.fromTo(tlTextTwo, animFrom, animTo, "-=0.4");
+    if (tlTextThree.length) tl.fromTo(tlTextThree, animFrom, animTo, "-=0.4");
+    if (tlTextFour.length) tl.fromTo(tlTextFour, animFrom, animTo, "-=0.4");
+    if (tlTextFive.length) tl.fromTo(tlTextFive, animFrom, animTo, "-=0.4");
+    if (tlTextSix.length) tl.fromTo(tlTextSix, animFrom, animTo, "-=0.4");
+  });
+}
 function init() {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
@@ -480,6 +512,7 @@ function init() {
   swiperFacilities();
   swiperFoods();
   hero();
+  animationText();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

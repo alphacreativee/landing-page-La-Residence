@@ -1800,6 +1800,11 @@ body.custom-modal-open {
   gap: 4px;
   margin-bottom: 24px;
 }
+@media (max-width: 767px) {
+  .room-types .room-main .filter-list-button {
+    flex-wrap: wrap;
+  }
+}
 .room-types .room-main .filter-list-button .filter-button {
   width: 300px;
   border: 1px solid var(--color-primary);
@@ -1817,6 +1822,8 @@ body.custom-modal-open {
 @media (max-width: 767px) {
   .room-types .room-main .filter-list-button .filter-button {
     padding: 0 16px;
+    width: max-content;
+    height: 60px;
   }
 }
 .room-types .room-main .filter-list-button .filter-button.active, .room-types .room-main .filter-list-button .filter-button:hover {

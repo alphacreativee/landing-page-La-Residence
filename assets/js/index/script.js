@@ -266,7 +266,7 @@ function swiperFoods() {
   const swiper = new Swiper(swiperEl, {
     slidesPerView: "auto",
     spaceBetween: GAP,
-    loop: true,
+    // loop: true,
     speed: 1500,
     watchSlidesProgress: true,
     a11y: false,

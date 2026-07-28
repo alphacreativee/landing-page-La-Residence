@@ -2433,6 +2433,10 @@ body.custom-modal-open {
   line-height: 20px;
   color: var(--color-white);
   font-weight: 400;
+  transition: all 0.3s;
+}
+.footer-col .box .footer-menu ul li a:hover {
+  color: var(--color-primary);
 }
 .footer-col .box .footer-copyright {
   font-size: 16px;

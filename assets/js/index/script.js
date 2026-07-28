@@ -454,10 +454,60 @@ function hero() {
   const swiperEl = containerSwiperEl.querySelector(".swiper-el-parallax");
   if (!swiperEl) return;
 
+  const contentItems = document.querySelectorAll(
+    ".banner .banner-content-item",
+  );
+
+  function updateContent(activeIndex, direction = "next") {
+    contentItems.forEach((item) => {
+      const itemIndex = parseInt(item.dataset.index, 10);
+
+      gsap.killTweensOf(item);
+
+      const isNext = direction === "next";
+
+      if (itemIndex === activeIndex) {
+        // Item mới: next thì đẩy từ dưới lên (bắt đầu ở y dương, về 0)
+        // prev thì đẩy từ trên xuống (bắt đầu ở y âm, về 0)
+        gsap.fromTo(
+          item,
+          { opacity: 0, y: isNext ? 30 : -30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            overwrite: "auto",
+          },
+        );
+        item.classList.add("active");
+      } else if (item.classList.contains("active")) {
+        // Item cũ: next thì bay lên trên (y âm), prev thì bay xuống dưới (y dương)
+        gsap.to(item, {
+          opacity: 0,
+          y: isNext ? -30 : 30,
+          duration: 0.4,
+          ease: "power2.in",
+          overwrite: "auto",
+        });
+        item.classList.remove("active");
+      } else {
+        // các item không active và không phải active mới, đảm bảo về trạng thái ẩn sạch
+        gsap.set(item, { opacity: 0, y: isNext ? 30 : -30 });
+        item.classList.remove("active");
+      }
+    });
+  }
+
   const swiperParallax = initParallaxSwiper(swiperEl, {
     pagination: {
       el: containerSwiperEl.querySelector(".swiper-pagination"),
       clickable: true,
+    },
+    on: {
+      slideChange: function () {
+        updateContent(this.realIndex);
+      },
     },
   });
 }

@@ -1062,7 +1062,7 @@ body {
   pointer-events: none;
 }
 .modal-custom-room .container-swiper .swiper-arrow {
-  background-color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.7);
   width: 100px;
   padding: 0 20px;
   margin: 0;
@@ -1548,7 +1548,7 @@ body.custom-modal-open {
 .banner-inner .swiper-pagination .swiper-pagination-bullet-active {
   width: 40px;
 }
-.banner-content {
+.banner-content-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1557,11 +1557,25 @@ body.custom-modal-open {
   width: max-content;
   text-align: center;
 }
-.banner-content h2 {
+.banner-content-wrapper h2 {
   font-size: 30px;
   line-height: 39px;
   color: var(--color-white);
   font-weight: 400;
+}
+
+.banner-content {
+  display: grid;
+}
+.banner-content-item {
+  grid-area: 1/1;
+  opacity: 0;
+  pointer-events: none;
+  will-change: opacity, transform;
+}
+.banner-content-item.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .about {
@@ -2036,7 +2050,7 @@ body.custom-modal-open {
   width: 40px;
 }
 .facilities-list .swiper-arrow {
-  background-color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.7);
   width: 100px;
   padding: 0 20px;
   margin-top: -45px;
@@ -2203,7 +2217,7 @@ body.custom-modal-open {
   width: 40px;
 }
 .foods-list .swiper-arrow {
-  background-color: var(--color-white);
+  background-color: rgba(255, 255, 255, 0.7);
   width: 100px;
   padding: 0 20px;
   margin-top: -45px;
@@ -2415,13 +2429,23 @@ body.custom-modal-open {
 }
 .footer-col .box .social ul li a {
   transition: all 0.4s ease;
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 24px;
 }
-.footer-col .box .social ul li a:hover {
-  opacity: 0.7;
+.footer-col .box .social ul li a:hover img:last-child {
+  opacity: 1;
 }
 .footer-col .box .social ul li a img {
   width: 24px;
   height: 24px;
+}
+.footer-col .box .social ul li a img:last-child {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 .footer-col .box .footer-menu ul {
   display: flex;

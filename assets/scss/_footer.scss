@@ -46,15 +46,31 @@
           display: flex;
           justify-content: center;
           gap: 16px;
+
           li {
             a {
               transition: all 0.4s ease;
+              position: relative;
+              display: block;
+              width: 24px;
+              height: 24px;
+
               &:hover {
-                opacity: 0.7;
+                img:last-child {
+                  opacity: 1;
+                }
               }
+
               img {
                 width: 24px;
                 height: 24px;
+
+                &:last-child {
+                  position: absolute;
+                  inset: 0;
+                  opacity: 0;
+                  transition: opacity 0.4s;
+                }
               }
             }
           }

@@ -50,7 +50,7 @@
       }
     }
   }
-  &-content {
+  &-content-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -63,6 +63,21 @@
       line-height: 39px;
       color: var(--color-white);
       font-weight: 400;
+    }
+  }
+}
+.banner-content {
+  display: grid; // tất cả item chồng lên nhau trong cùng 1 ô grid
+
+  &-item {
+    grid-area: 1 / 1; // chồng lên nhau, không cần position: absolute
+    opacity: 0;
+    pointer-events: none;
+    will-change: opacity, transform; // gợi ý browser tối ưu GPU cho animation
+
+    &.active {
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 }

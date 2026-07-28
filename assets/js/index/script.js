@@ -246,27 +246,51 @@ function swiperFoods() {
   const swiperEl = parentSwiperEl.querySelector(".swiper-foods");
   if (!swiperEl) return;
 
-  const GAP = 24; // phải khớp spaceBetween
+  const GAP = 24;
+  const MIN_SLIDES_REQUIRED = 8; // ngưỡng tối thiểu để loop mượt, tuỳ chỉnh theo nhu cầu
+
+  const wrapperEl = swiperEl.querySelector(".swiper-wrapper");
+
+  // Duplicate slide nếu số lượng gốc quá ít
+  function ensureEnoughSlides() {
+    const originalSlides = Array.from(
+      wrapperEl.querySelectorAll(".swiper-slide"),
+    );
+    const originalCount = originalSlides.length;
+
+    if (originalCount === 0 || originalCount >= MIN_SLIDES_REQUIRED) return;
+
+    // Số lần cần nhân bản để đạt đủ ngưỡng
+    const timesToClone = Math.ceil(MIN_SLIDES_REQUIRED / originalCount);
+
+    for (let i = 1; i < timesToClone; i++) {
+      originalSlides.forEach((slide) => {
+        const clone = slide.cloneNode(true);
+        clone.setAttribute("data-cloned", "true"); // đánh dấu để dễ nhận biết/xử lý riêng nếu cần
+        wrapperEl.appendChild(clone);
+      });
+    }
+  }
+
+  ensureEnoughSlides();
 
   // Cấu hình theo breakpoint
   function getBreakpointConfig() {
     const w = window.innerWidth;
     if (w < 767) {
-      // mobile: 1 item full width, KHÔNG peek 2 bên
       return { featuredCount: 1, ratio: 1, initialSlide: 0, minPeek: 0 };
     }
     if (w < 991) {
-      // tablet: 2 item, có peek
       return { featuredCount: 2, ratio: 0.42, initialSlide: 2, minPeek: 16 };
     }
-    // desktop: giữ như cũ
     return { featuredCount: 2, ratio: 0.365, initialSlide: 2, minPeek: 16 };
   }
 
   const swiper = new Swiper(swiperEl, {
     slidesPerView: "auto",
     spaceBetween: GAP,
-    // loop: true,
+    loop: true,
+    loopAdditionalSlides: 2,
     speed: 1500,
     watchSlidesProgress: true,
     a11y: false,
@@ -316,7 +340,6 @@ function swiperFoods() {
 
     sw.slides.forEach((slide) => {
       slide.style.boxSizing = "border-box";
-      // dùng setProperty + 'important' để thắng cả CSS !important từ theme/global
       slide.style.setProperty("width", `${slideWidth}px`, "important");
     });
 
@@ -329,8 +352,6 @@ function swiperFoods() {
     sw.params.slidesOffsetAfter = peek;
     sw.params.slidesPerGroup = featuredCount;
 
-    // loop:true cần rebuild lại khi đổi width slide bằng tay,
-    // tránh duplicate slide bị lệch kích thước 2 đầu
     sw.loopDestroy();
     sw.loopCreate();
     sw.update();

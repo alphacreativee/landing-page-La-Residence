@@ -884,18 +884,39 @@ body {
   justify-content: center;
   align-items: center;
   padding: 16px 32px;
-  background-color: var(--color-primary);
   height: 42px;
   transition: all 0.4s ease;
-  border: 1px solid var(--color-primary);
+  position: relative;
+  cursor: pointer;
+}
+.btn-general span {
+  z-index: 3;
+}
+.btn-general::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #96563e 0%, #613a2c 100%);
+  z-index: 2;
+}
+.btn-general::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #613a2c 0%, #96563e 100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+.btn-general:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
 @media (max-width: 767px) {
   .btn-general {
     padding: 16px 24px;
   }
-}
-.btn-general:hover {
-  background-color: transparent;
 }
 
 .modal-custom .modal-header {
@@ -1214,6 +1235,24 @@ body.custom-modal-open {
 
 .swiper-arrow {
   user-select: none;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.contact-info .contact-item {
+  border-bottom: 1px solid var(--color-fourth);
+}
+.contact-info .contact-item .label {
+  font-size: 16px;
+  line-height: 20px;
+}
+.contact-info .contact-item a {
+  font-size: 30px;
+  line-height: 39px;
+  color: var(--color-primary);
 }
 
 .lightpick {
@@ -2317,7 +2356,7 @@ body.custom-modal-open {
   object-fit: cover;
 }
 .contact-section .contact-wrapper {
-  padding: 100px 40px 32px;
+  padding: 200px 40px;
   display: flex;
   gap: 24px;
 }
@@ -2339,6 +2378,7 @@ body.custom-modal-open {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 100px;
 }
 @media (max-width: 767px) {
   .contact-section .contact-sale {
@@ -2354,24 +2394,19 @@ body.custom-modal-open {
 .contact-section .contact-sale .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  padding: 8px 0;
-  border-top: 1px solid #bf7e66;
-  border-bottom: 1px solid #bf7e66;
 }
-.contact-section .contact-sale .contact-info a.email {
-  width: max-content;
+.contact-section .contact-sale .contact-info .contact-item {
+  border-bottom: 1px solid var(--color-fourth);
+}
+.contact-section .contact-sale .contact-info .contact-item .label {
   font-size: 16px;
   line-height: 20px;
   color: var(--color-white);
-  font-weight: 400;
 }
-.contact-section .contact-sale .contact-info a.phone {
-  width: max-content;
+.contact-section .contact-sale .contact-info .contact-item a {
   font-size: 30px;
   line-height: 39px;
   color: var(--color-white);
-  font-weight: 400;
 }
 .contact-section .modal-dialog {
   margin: 0;

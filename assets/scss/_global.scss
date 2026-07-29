@@ -16,7 +16,7 @@
     width: 100%;
     height: 1px;
     background-color: var(--color-white);
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     transform: scaleX(0);
     transform-origin: bottom right;
@@ -35,37 +35,43 @@
   align-items: center;
   padding: 16px 32px;
   height: 42px;
-  transition: all 0.4s ease;
   position: relative;
   cursor: pointer;
+  overflow: hidden;
+
   span {
     z-index: 3;
+    position: relative;
   }
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, #96563e 0%, #613a2c 100%);
-    z-index: 2;
-  }
+
+  &::before,
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, #613a2c 0%, #96563e 100%);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
     z-index: 2;
   }
-  &:hover {
-    &::after {
-      opacity: 1;
-      visibility: visible;
-    }
+
+  &::before {
+    background: linear-gradient(90deg, #96563e 0%, #613a2c 100%);
   }
+
+  &::after {
+    background: linear-gradient(90deg, #613a2c 0%, #96563e 100%);
+    animation: fadeSwap 3s ease-in-out infinite alternate;
+  }
+
   @media (max-width: 767px) {
     padding: 16px 24px;
+  }
+}
+
+@keyframes fadeSwap {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 // modal
@@ -407,9 +413,31 @@ body.custom-modal-open {
       line-height: 20px;
     }
     a {
+      display: block;
       font-size: 30px;
       line-height: 39px;
       color: var(--color-primary);
+      transition: color 0.4s ease;
+      cursor: pointer;
+      &.hover-text-underline {
+        &::before {
+          background-color: var(--color-primary);
+        }
+      }
     }
   }
+}
+.custom-modal-body {
+  width: 70%;
+  aspect-ratio: 16 / 9;
+  height: auto; // để aspect-ratio tự tính
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.custom-modal-dialog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

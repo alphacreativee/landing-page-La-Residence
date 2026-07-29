@@ -22,7 +22,7 @@
       gap: 24px;
 
       @media (max-width: 767px) {
-        padding: 100px 20px 20px;
+        padding: 80px 20px;
         flex-direction: column;
         gap: 12px;
       }
@@ -61,9 +61,17 @@
           color: var(--color-white);
         }
         a {
+          display: block;
           font-size: 30px;
           line-height: 39px;
           color: var(--color-white);
+          transition: all 0.3s ease;
+          cursor: pointer;
+          &.hover-text-underline {
+            &::before {
+              background-color: var(--color-white);
+            }
+          }
         }
       }
     }

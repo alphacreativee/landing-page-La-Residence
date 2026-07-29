@@ -165,4 +165,19 @@
       }
     }
   }
+  .swiper-el-parallax img {
+    object-position: bottom;
+  }
+  .custom-modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(150, 86, 62, 0.85);
+  }
+  .container-swiper {
+    height: 39.375vw;
+  }
+}
+.modal.modal-custom {
+  background-color: rgba(150, 86, 62, 0.85);
 }

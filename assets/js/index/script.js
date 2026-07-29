@@ -398,12 +398,10 @@ function scrollToSection() {
   function handleScrollClick(e, link) {
     const targetId = link.getAttribute("href");
 
-    // Bỏ qua nếu href rỗng, chỉ là "#", hoặc không trỏ tới id hợp lệ nào
     if (!targetId || targetId === "#" || targetId.length <= 1) {
       return;
     }
 
-    // Bỏ qua nếu section tương ứng không tồn tại trên trang
     const targetEl = document.querySelector(targetId);
     if (!targetEl) {
       return;
@@ -421,13 +419,11 @@ function scrollToSection() {
 
     const offset = getHeaderOffset();
 
-    gsap.to(window, {
-      duration: 0.5,
-      scrollTo: {
-        y: targetId,
-        offsetY: offset, // trừ đúng chiều cao header, section không bị che
-      },
-      ease: "none",
+    lenis.scrollTo(targetEl, {
+      offset: -offset, // Lenis dùng offset âm để trừ (khác GSAP dùng offsetY dương)
+      duration: 1.5, // tăng từ 1.2 lên 1.5, cảm giác thong thả hơn
+      easing: (t) =>
+        t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2, // ease-out cubic, hoặc tự custom
       onComplete: () => {
         isClicking = false;
       },
@@ -480,54 +476,60 @@ function hero() {
   );
 
   function updateContent(activeIndex, direction = "next") {
+    const isNext = direction === "next";
+
     contentItems.forEach((item) => {
       const itemIndex = parseInt(item.dataset.index, 10);
 
       gsap.killTweensOf(item);
 
-      const isNext = direction === "next";
-
       if (itemIndex === activeIndex) {
-        // Item mới: next thì đẩy từ dưới lên (bắt đầu ở y dương, về 0)
-        // prev thì đẩy từ trên xuống (bắt đầu ở y âm, về 0)
         gsap.fromTo(
           item,
-          { opacity: 0, y: isNext ? 30 : -30 },
+          { opacity: 0, y: isNext ? 24 : -24 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.6,
-            ease: "power2.out",
+            duration: 1.4, // tăng từ 0.9
+            delay: 0.25, // tăng từ 0.15
+            ease: "power3.out",
             overwrite: "auto",
           },
         );
         item.classList.add("active");
       } else if (item.classList.contains("active")) {
-        // Item cũ: next thì bay lên trên (y âm), prev thì bay xuống dưới (y dương)
         gsap.to(item, {
           opacity: 0,
-          y: isNext ? -30 : 30,
-          duration: 0.4,
-          ease: "power2.in",
+          y: isNext ? -16 : 16,
+          duration: 0.4, // tăng nhẹ từ 0.25
+          ease: "power1.in",
           overwrite: "auto",
         });
         item.classList.remove("active");
       } else {
-        // các item không active và không phải active mới, đảm bảo về trạng thái ẩn sạch
-        gsap.set(item, { opacity: 0, y: isNext ? 30 : -30 });
+        gsap.set(item, { opacity: 0, y: isNext ? 24 : -24 });
         item.classList.remove("active");
       }
     });
   }
 
+  let previousIndex = 0;
+
   const swiperParallax = initParallaxSwiper(swiperEl, {
+    autoplay: {
+      delay: 6000, // tăng từ 4000, cho slide đứng lâu hơn để cảm nhận trọn animation
+      disableOnInteraction: false,
+    },
+    speed: 1600, // tăng từ 1000, chuyển ảnh chậm rãi hơn, khớp nhịp text
     pagination: {
       el: containerSwiperEl.querySelector(".swiper-pagination"),
       clickable: true,
     },
     on: {
-      slideChange: function () {
-        updateContent(this.realIndex);
+      slideChangeTransitionStart: function () {
+        const direction = this.swipeDirection || "next";
+        updateContent(this.realIndex, direction);
+        previousIndex = this.realIndex;
       },
     },
   });
@@ -536,10 +538,18 @@ function headerMobile() {
   if (window.innerWidth > 991) return;
   const headerHam = document.getElementById("ham");
   const menuWrapper = document.querySelector(".header-menu-wrapper");
+  const menuLinks = document.querySelectorAll(".header-menu ul li a");
 
   headerHam.addEventListener("click", () => {
     // headerHam.classList.toggle("active");
     menuWrapper.classList.toggle("active");
+  });
+
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      menuWrapper.classList.remove("active");
+      console.log("123");
+    });
   });
 }
 function animationText() {
@@ -574,6 +584,84 @@ function animationText() {
     if (tlTextSix.length) tl.fromTo(tlTextSix, animFrom, animTo, "-=0.4");
   });
 }
+function animationItemsSection() {
+  const isMobile = $(window).width() < 992;
+
+  const FADE_EASE = "power2.out";
+  const LINE_EASE = "power2.out";
+
+  const ITEM_DURATION = 1.2;
+  const ITEM_STAGGER = 0.16;
+  const MOVE_Y = 12;
+
+  gsap.utils.toArray("[section-fade-each-item]").forEach((section) => {
+    const items = section.querySelectorAll("[data-fade-item]");
+
+    const isExperience = section.closest(
+      ".section-experience,.section-accommodation",
+    );
+    const isFadeInMobile = section.hasAttribute("enabled-fade-each-mobile");
+    if (isMobile && !isFadeInMobile) return;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 65%",
+        toggleActions: "play none none none",
+        once: true,
+      },
+    });
+
+    items.forEach((item) => {
+      const isLineItem = item.hasAttribute("fade-item-line");
+
+      // ===== LINE ITEM =====
+      if (isLineItem) {
+        const split = new SplitText(item, {
+          type: "lines",
+          linesClass: "line",
+          mask: "lines",
+        });
+
+        gsap.set(split.lines, {
+          yPercent: 100,
+          force3D: true,
+        });
+
+        tl.to(split.lines, {
+          yPercent: 0,
+          duration: ITEM_DURATION,
+          ease: LINE_EASE,
+          force3D: true,
+          stagger: ITEM_STAGGER,
+        });
+      }
+
+      // ===== NORMAL FADE ITEM (card) =====
+      else {
+        gsap.set(item, {
+          y: MOVE_Y,
+          opacity: 0,
+          force3D: true,
+          willChange: "transform, opacity",
+        });
+
+        tl.to(
+          item,
+          {
+            y: 0,
+            opacity: 1,
+            duration: ITEM_DURATION,
+            ease: FADE_EASE,
+            force3D: true,
+            clearProps: "willChange",
+          },
+          "<0.25", // tăng từ 0.08 lên 0.25, khoảng cách giữa các card rõ rệt hơn hẳn
+        );
+      }
+    });
+  });
+}
 function init() {
   gsap.registerPlugin(ScrollTrigger);
   customDropdown();
@@ -584,6 +672,7 @@ function init() {
   swiperFoods();
   hero();
   animationText();
+  animationItemsSection();
 }
 
 document.addEventListener("DOMContentLoaded", () => {

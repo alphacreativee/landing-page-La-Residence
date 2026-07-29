@@ -1212,6 +1212,10 @@ body.custom-modal-open {
   object-fit: cover;
 }
 
+.swiper-arrow {
+  user-select: none;
+}
+
 .lightpick {
   --color-stroke: #ccc;
   --color-bg: #fff;
@@ -1304,6 +1308,7 @@ body.custom-modal-open {
     display: flex;
     justify-content: space-between;
     padding: 12px;
+    gap: 0 24px;
   }
 }
 #header .header-menu {
@@ -1554,7 +1559,7 @@ body.custom-modal-open {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3;
-  width: max-content;
+  width: calc(100% - 40px);
   text-align: center;
 }
 .banner-content-wrapper h2 {

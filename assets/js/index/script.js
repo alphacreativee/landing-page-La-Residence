@@ -474,13 +474,13 @@ function hero() {
   const contentItems = document.querySelectorAll(
     ".banner .banner-content-item",
   );
+  const slideImages = swiperEl.querySelectorAll(".swiper-slide img");
 
   function updateContent(activeIndex, direction = "next") {
     const isNext = direction === "next";
 
     contentItems.forEach((item) => {
       const itemIndex = parseInt(item.dataset.index, 10);
-
       gsap.killTweensOf(item);
 
       if (itemIndex === activeIndex) {
@@ -490,8 +490,8 @@ function hero() {
           {
             opacity: 1,
             y: 0,
-            duration: 1.4, // tăng từ 0.9
-            delay: 0.25, // tăng từ 0.15
+            duration: 1.4,
+            delay: 0.25,
             ease: "power3.out",
             overwrite: "auto",
           },
@@ -501,7 +501,7 @@ function hero() {
         gsap.to(item, {
           opacity: 0,
           y: isNext ? -16 : 16,
-          duration: 0.4, // tăng nhẹ từ 0.25
+          duration: 0.4,
           ease: "power1.in",
           overwrite: "auto",
         });
@@ -513,14 +513,51 @@ function hero() {
     });
   }
 
-  let previousIndex = 0;
+  // reset toàn bộ ảnh về scale 1.3 (trạng thái ban đầu), trừ ảnh đang active
+  function resetImages(exceptIndex) {
+    slideImages.forEach((img, index) => {
+      if (index !== exceptIndex) {
+        gsap.killTweensOf(img);
+        gsap.set(img, { scale: 1.2 });
+      }
+    });
+  }
 
-  const swiperParallax = initParallaxSwiper(swiperEl, {
-    autoplay: {
-      delay: 6000, // tăng từ 4000, cho slide đứng lâu hơn để cảm nhận trọn animation
-      disableOnInteraction: false,
-    },
-    speed: 1600, // tăng từ 1000, chuyển ảnh chậm rãi hơn, khớp nhịp text
+  let autoplayTimeout;
+
+  // chạy animation scale ảnh, xong mới gọi callback (chuyển slide)
+  function playImageScale(activeIndex, onDone) {
+    const img = slideImages[activeIndex];
+    if (!img) {
+      onDone();
+      return;
+    }
+
+    resetImages(activeIndex);
+    gsap.killTweensOf(img);
+    gsap.set(img, { scale: 1.2 });
+
+    gsap.to(img, {
+      scale: 1,
+      duration: 3,
+      ease: "power2.out",
+      onComplete: onDone,
+    });
+  }
+
+  let swiperParallax;
+
+  function scheduleNext(activeIndex) {
+    clearTimeout(autoplayTimeout);
+    playImageScale(activeIndex, () => {
+      // ảnh scale xong -> chuyển slide
+      swiperParallax.slideNext();
+    });
+  }
+
+  swiperParallax = initParallaxSwiper(swiperEl, {
+    autoplay: false, // tắt autoplay mặc định, mình tự điều khiển
+    speed: 1600,
     pagination: {
       el: containerSwiperEl.querySelector(".swiper-pagination"),
       clickable: true,
@@ -529,7 +566,13 @@ function hero() {
       slideChangeTransitionStart: function () {
         const direction = this.swipeDirection || "next";
         updateContent(this.realIndex, direction);
-        previousIndex = this.realIndex;
+      },
+      slideChangeTransitionEnd: function () {
+        // slide đã đổi xong (chuyển ảnh xong), giờ bắt đầu chạy scale rồi mới next
+        scheduleNext(this.realIndex);
+      },
+      init: function () {
+        scheduleNext(this.realIndex);
       },
     },
   });

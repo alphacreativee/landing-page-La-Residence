@@ -1,6 +1,6 @@
 .footer {
   &-container {
-    background-color: var(--color-secondary);
+    background-color: #eee9dc;
     padding: 40px;
     @media (max-width: 767px) {
       padding: 20px;
@@ -24,17 +24,20 @@
         padding-top: 20px;
       }
     }
+    &:last-child {
+      .box {
+        gap: 40px;
+      }
+    }
     .box {
-      display: grid;
-      justify-content: center;
-      grid-template-rows: 100px 120px 100px;
-      gap: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 64px;
       height: 100%;
       @media (max-width: 767px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 100px;
+        gap: 40px;
       }
       .logo {
         display: flex;
@@ -85,7 +88,7 @@
             a {
               font-size: 16px;
               line-height: 20px;
-              color: var(--color-white);
+              color: var(--color-black);
               font-weight: 400;
               transition: all 0.3s;
               &:hover {
@@ -98,7 +101,7 @@
       .footer-copyright {
         font-size: 16px;
         line-height: 20px;
-        color: var(--color-white);
+        color: var(--color-black);
         font-weight: 400;
         display: flex;
         align-items: flex-end;
@@ -108,13 +111,22 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
+
         a,
         p {
           font-size: 16px;
           line-height: 20px;
-          color: var(--color-white);
+          color: var(--color-black);
           font-weight: 400;
           text-align: center;
+        }
+        p {
+          color: var(--color-primary);
+        }
+        a {
+          &::before {
+            background-color: var(--color-black);
+          }
         }
       }
     }

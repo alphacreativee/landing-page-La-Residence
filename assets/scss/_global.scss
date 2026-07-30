@@ -80,6 +80,9 @@
     margin-bottom: 32px;
     padding: 32px;
     border-bottom: none;
+    @media (max-width: 767px) {
+      padding: 32px 16px;
+    }
   }
   .modal-title {
     font-size: 30px;
@@ -185,6 +188,9 @@
   }
   .modal-body {
     padding: 0 32px 32px;
+    @media (max-width: 767px) {
+      padding: 0 16px 32px;
+    }
     form {
       display: flex;
       flex-direction: column;
@@ -419,6 +425,9 @@ body.custom-modal-open {
       color: var(--color-primary);
       transition: color 0.4s ease;
       cursor: pointer;
+      @media (max-width: 767px) {
+        font-size: 19px;
+      }
       &.hover-text-underline {
         &::before {
           background-color: var(--color-primary);
@@ -440,4 +449,7 @@ body.custom-modal-open {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.modal-dialog {
+  max-width: 520px;
 }

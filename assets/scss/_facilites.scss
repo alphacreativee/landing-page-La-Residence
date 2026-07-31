@@ -51,6 +51,7 @@
       width: 100%;
       aspect-ratio: 437 / 367;
       flex-shrink: 0; // giữ nguyên tỉ lệ, không bị co lại khi content đẩy
+      height: 367px;
       @media (max-width: 767px) {
         aspect-ratio: 541 / 367;
       }

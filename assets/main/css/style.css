@@ -1815,7 +1815,7 @@ body.custom-modal-open {
 }
 
 .room-types {
-  padding: 120px 40px 40px;
+  padding: 60px 40px 40px;
   background-color: var(--color-third);
 }
 @media (max-width: 991px) {
@@ -1827,7 +1827,7 @@ body.custom-modal-open {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 24px;
-  margin-bottom: 84px;
+  margin-bottom: 40px;
 }
 @media (max-width: 767px) {
   .room-types .room-heading {
@@ -1867,7 +1867,7 @@ body.custom-modal-open {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 84px;
+  gap: 24px;
   justify-content: space-between;
   background-color: var(--color-white);
   padding: 32px;
@@ -1882,14 +1882,14 @@ body.custom-modal-open {
 .room-types .room-wrapper .room-info ul {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0;
   width: 100%;
 }
 .room-types .room-wrapper .room-info ul li .box {
   display: flex;
   align-items: center;
   gap: 24px;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
   border-bottom: 1px solid #d3cec6;
 }
 .room-types .room-wrapper .room-info ul li .box .name {
@@ -1942,7 +1942,7 @@ body.custom-modal-open {
 .room-types .room-image .image-main {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 210px);
+  grid-template-rows: repeat(3, 170px);
   gap: 2px;
 }
 @media (max-width: 767px) {
@@ -2004,7 +2004,7 @@ body.custom-modal-open {
 }
 
 .facilities {
-  padding: 120px 40px;
+  padding: 60px 40px;
 }
 @media (max-width: 767px) {
   .facilities {
@@ -2018,12 +2018,12 @@ body.custom-modal-open {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 48px 0;
-  margin-bottom: 84px;
+  gap: 24px 0;
+  margin-bottom: 40px;
 }
 @media (max-width: 767px) {
   .facilities-heading {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
   }
 }
 .facilities-heading h4 {
@@ -2063,9 +2063,9 @@ body.custom-modal-open {
 }
 .facilities-box .image {
   width: 100%;
-  aspect-ratio: 437/367;
+  aspect-ratio: 16/11;
   flex-shrink: 0;
-  height: 367px;
+  height: 330px;
 }
 @media (max-width: 767px) {
   .facilities-box .image {
@@ -2099,7 +2099,7 @@ body.custom-modal-open {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 48px;
+  margin-bottom: 24px;
 }
 @media (max-width: 767px) {
   .facilities-box .content-top {
@@ -2205,7 +2205,7 @@ body.custom-modal-open {
 }
 
 .foods {
-  padding: 120px 0;
+  padding: 60px 0;
   background-color: var(--color-white);
 }
 @media (max-width: 991px) {
@@ -2217,8 +2217,8 @@ body.custom-modal-open {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 48px 0;
-  margin-bottom: 84px;
+  gap: 24px 0;
+  margin-bottom: 40px;
 }
 @media (max-width: 991px) {
   .foods-heading {
@@ -2228,7 +2228,7 @@ body.custom-modal-open {
 }
 @media (max-width: 767px) {
   .foods-heading {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     padding: 20px;
   }
 }
@@ -2275,7 +2275,7 @@ body.custom-modal-open {
 }
 .foods-box .image {
   width: 100%;
-  aspect-ratio: 553/573;
+  aspect-ratio: 553/520;
 }
 .foods-box .image img {
   width: 100%;

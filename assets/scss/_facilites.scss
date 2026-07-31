@@ -1,5 +1,5 @@
 .facilities {
-  padding: 120px 40px;
+  padding: 60px 40px;
   @media (max-width: 767px) {
     padding: 80px 0;
   }
@@ -10,10 +10,10 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 48px 0;
-    margin-bottom: 84px;
+    gap: 24px 0;
+    margin-bottom: 40px;
     @media (max-width: 767px) {
-      margin-bottom: 48px;
+      margin-bottom: 32px;
     }
     h4 {
       font-size: 14px;
@@ -49,9 +49,9 @@
 
     .image {
       width: 100%;
-      aspect-ratio: 437 / 367;
+      aspect-ratio: 16 / 11;
       flex-shrink: 0; // giữ nguyên tỉ lệ, không bị co lại khi content đẩy
-      height: 367px;
+      height: 330px;
       @media (max-width: 767px) {
         aspect-ratio: 541 / 367;
       }
@@ -80,7 +80,7 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        margin-bottom: 48px;
+        margin-bottom: 24px;
         @media (max-width: 767px) {
           margin-bottom: 24px;
         }

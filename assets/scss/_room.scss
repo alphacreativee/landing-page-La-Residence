@@ -1,5 +1,5 @@
 .room-types {
-  padding: 120px 40px 40px;
+  padding: 60px 40px 40px;
   background-color: var(--color-third);
   @media (max-width: 991px) {
     padding: 80px 20px 40px;
@@ -9,7 +9,7 @@
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 24px;
-      margin-bottom: 84px;
+      margin-bottom: 40px;
       @media (max-width: 767px) {
         grid-template-columns: 1fr;
         margin-bottom: 48px;
@@ -43,7 +43,7 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 84px;
+        gap: 24px;
         justify-content: space-between;
         background-color: var(--color-white);
         padding: 32px;
@@ -57,14 +57,14 @@
         ul {
           display: flex;
           flex-direction: column;
-          gap: 4px;
+          gap: 0;
           width: 100%;
           li {
             .box {
               display: flex;
               align-items: center;
               gap: 24px;
-              padding-bottom: 4px;
+              padding-bottom: 2px;
               border-bottom: 1px solid #d3cec6;
               .name {
                 font-size: 16px;
@@ -121,7 +121,7 @@
       .image-main {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(3, 210px);
+        grid-template-rows: repeat(3, 170px);
         gap: 2px;
         @media (max-width: 767px) {
           grid-template-columns: repeat(3, 1fr);

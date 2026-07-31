@@ -283,7 +283,7 @@ function swiperFoods() {
     if (w < 991) {
       return { featuredCount: 2, ratio: 0.42, initialSlide: 2, minPeek: 16 };
     }
-    return { featuredCount: 2, ratio: 0.365, initialSlide: 2, minPeek: 16 };
+    return { featuredCount: 2, ratio: 0.29, initialSlide: 2, minPeek: 16 };
   }
 
   const swiper = new Swiper(swiperEl, {
@@ -334,19 +334,27 @@ function swiperFoods() {
 
   function setPeekOffset(sw) {
     const { featuredCount, ratio, minPeek } = getBreakpointConfig();
-
     const containerWidth = sw.el.offsetWidth;
-    const slideWidth = Math.round(containerWidth * ratio);
+
+    let slideWidth = Math.round(containerWidth * ratio);
+    let peek = (containerWidth - featuredCount * slideWidth - GAP) / 2;
+
+    const maxPeek = containerWidth * 0.15;
+
+    if (peek > maxPeek) {
+      // Thay vì cắt peek rồi bỏ dư, tăng slideWidth để lấp đúng phần dư
+      peek = maxPeek;
+      slideWidth = Math.round(
+        (containerWidth - GAP - 2 * peek) / featuredCount,
+      );
+    }
+    peek = Math.max(peek, minPeek);
+    peek = Math.round(peek);
 
     sw.slides.forEach((slide) => {
       slide.style.boxSizing = "border-box";
       slide.style.setProperty("width", `${slideWidth}px`, "important");
     });
-
-    let peek = (containerWidth - featuredCount * slideWidth - GAP) / 2;
-    peek = Math.max(peek, minPeek);
-    peek = Math.min(peek, containerWidth * 0.15);
-    peek = Math.round(peek);
 
     sw.params.slidesOffsetBefore = peek;
     sw.params.slidesOffsetAfter = peek;

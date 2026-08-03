@@ -30,6 +30,11 @@
         @media (min-width: 992px) {
           max-width: 95%;
         }
+        @media (max-width: 767px) {
+          font-size: 22px;
+          line-height: 30px;
+          max-width: 95%;
+        }
       }
     }
     &-wrapper {

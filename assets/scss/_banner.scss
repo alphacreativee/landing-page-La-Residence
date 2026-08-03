@@ -4,7 +4,7 @@
   height: 100svh;
   overflow: hidden;
   @media (max-width: 767px) {
-    height: 35svh;
+    height: 40svh;
   }
   &-inner {
     width: 100%;
@@ -78,7 +78,7 @@
   }
   .container-swiper {
     @media (max-width: 767px) {
-      height: 35svh;
+      height: 40svh;
     }
   }
 }

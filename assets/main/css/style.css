@@ -2578,6 +2578,9 @@ body.custom-modal-open {
     align-items: center;
     width: 100%;
   }
+  .footer-col:first-child .box .logo-full img {
+    height: 100px;
+  }
 }
 .footer-col:last-child .box {
   gap: 40px;
@@ -2596,6 +2599,11 @@ body.custom-modal-open {
   }
   .footer-col:last-child .box .social {
     grid-column: 2/span 1;
+  }
+  .footer-col:last-child .box .social li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 }
 .footer-col .box {

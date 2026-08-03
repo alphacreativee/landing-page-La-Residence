@@ -29,6 +29,9 @@
             justify-content: center;
             align-items: center;
             width: 100%;
+            img {
+              height: 100px;
+            }
           }
         }
       }
@@ -49,6 +52,11 @@
           }
           .social {
             grid-column: 2 / span 1;
+            li {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+            }
           }
         }
       }

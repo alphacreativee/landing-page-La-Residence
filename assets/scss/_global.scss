@@ -263,6 +263,20 @@
         pointer-events: none;
       }
     }
+    .swiper-pagination {
+      bottom: 24px;
+      .swiper-pagination-bullet {
+        width: 8px;
+        height: 5px;
+        background-color: var(--color-white);
+        border-radius: 0px;
+        transition: width 0.4s ease;
+        opacity: 1;
+        &-active {
+          width: 40px;
+        }
+      }
+    }
     .swiper-arrow {
       background-color: rgba(255, 255, 255, 0.7);
       width: 100px;
@@ -294,6 +308,7 @@
       }
     }
     .swiper-el-thumbnail {
+      display: none;
       position: absolute;
       bottom: 32px;
       right: 32px;

@@ -1097,6 +1097,20 @@ body {
   z-index: 2;
   pointer-events: none;
 }
+.modal-custom-room .container-swiper .swiper-pagination {
+  bottom: 24px;
+}
+.modal-custom-room .container-swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 5px;
+  background-color: var(--color-white);
+  border-radius: 0px;
+  transition: width 0.4s ease;
+  opacity: 1;
+}
+.modal-custom-room .container-swiper .swiper-pagination .swiper-pagination-bullet-active {
+  width: 40px;
+}
 .modal-custom-room .container-swiper .swiper-arrow {
   background-color: rgba(255, 255, 255, 0.7);
   width: 100px;
@@ -1128,6 +1142,7 @@ body {
   right: 20px;
 }
 .modal-custom-room .container-swiper .swiper-el-thumbnail {
+  display: none;
   position: absolute;
   bottom: 32px;
   right: 32px;

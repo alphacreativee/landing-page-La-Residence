@@ -1,1067 +1,1311 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <!-- import favicon -->
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <!-- meta -->
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="" />
+    <!-- meta -->
+    <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lenis.css" />
+    <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/libs/lightpick.min.css" />
+    <!-- end meta -->
+    <!-- link custom css page -->
+    <link rel="stylesheet" href="./assets/fonts/font.css" />
+    <link rel="stylesheet" href="./assets/main/css/style.min.css" />
+    <!-- end link custom css page -->
+    <!-- scrollRestoration -->
+    <script>
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+    </script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home</title>
-  <!-- import favicon -->
-  <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon" />
-  <!-- meta -->
-  <meta property="og:url" content="" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="" />
-  <meta property="og:description" content="" />
-  <meta property="og:image" content="" />
-  <!-- meta -->
-  <link rel="stylesheet" href="./assets/libs/bootstrap.min.css" />
-  <link rel="stylesheet" href="./assets/libs/lenis.css" />
-  <link rel="stylesheet" href="./assets/libs/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./assets/libs/lightpick.min.css">
-  <!-- end meta -->
-  <!-- link custom css page -->
-  <link rel="stylesheet" href="./assets/fonts/font.css" />
-  <link rel="stylesheet" href="./assets/main/css/style.min.css" />
-  <!-- end link custom css page -->
-  <!-- scrollRestoration -->
-  <script>
-    if ("scrollRestoration" in history) {
-      history.scrollRestoration = "manual";
-    }
-  </script>
-</head>
-
-<body>
-  <!-- layout -->
-  <!-- header -->
-  <script>
-    fetch("./components/header.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("header").innerHTML = data;
-
-
-      });
-  </script>
-  <header id="header" class="header position-fixed top-0 start-0 end-0 w-100"></header>
-  <!-- end header -->
-  <main>
-    <section class="banner ">
-      <div class="banner-inner">
-        <div class="container-swiper">
-          <div class="swiper swiper-el-parallax h-100">
-            <div class="swiper-wrapper h-100">
-              <div class="swiper-slide overflow-hidden">
-                <div class="image">
-                  <img src="./assets/images/del/img-1.webp" alt="">
+  <body>
+    <!-- layout -->
+    <!-- header -->
+    <script>
+      fetch("./components/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        });
+    </script>
+    <header
+      id="header"
+      class="header position-fixed top-0 start-0 end-0 w-100"
+    ></header>
+    <!-- end header -->
+    <main>
+      <section class="banner">
+        <div class="banner-inner">
+          <div class="container-swiper">
+            <div class="swiper swiper-el-parallax h-100">
+              <div class="swiper-wrapper h-100">
+                <div class="swiper-slide overflow-hidden">
+                  <div class="image">
+                    <img src="./assets/images/del/img-1.webp" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide overflow-hidden">
+                  <div class="image">
+                    <img src="./assets/images/del/img-2.webp" alt="" />
+                  </div>
+                </div>
+                <div class="swiper-slide overflow-hidden">
+                  <div class="image">
+                    <img src="./assets/images/del/img-3.webp" alt="" />
+                  </div>
                 </div>
               </div>
-              <div class="swiper-slide overflow-hidden">
-                <div class="image">
-                  <img src="./assets/images/del/img-2.webp" alt="">
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+        <div class="banner-content-wrapper">
+          <div class="banner-content">
+            <h2 class="banner-content-item active" data-index="0">
+              Welcome to La Résidence
+            </h2>
+            <h2 class="banner-content-item" data-index="1">
+              Living Beyond Comfort
+            </h2>
+            <h2 class="banner-content-item" data-index="2">
+              A New Standard of Home
+            </h2>
+          </div>
+        </div>
+      </section>
+      <section id="about-us" class="about">
+        <div class="about-inner">
+          <div class="about-col">
+            <div class="about-box">
+              <div class="logo">
+                <img src="./assets/images/use/logo-full.svg" alt="" />
+              </div>
+              <div class="title">
+                La Résidence is a premium serviced apartment offering for modern
+                cosmopolitan living.
+              </div>
+              <div class="description">
+                Blending the comfort of home with the attentive service of a
+                luxury hotel, it provides thoughtfully designed living spaces
+                for global professionals and long-stay guests. Operated by
+                Shilla Hotel, the world leading luxury hotel brand, La Résidence
+                offers the warmth of home together with world-class hospitality.
+                Residents enjoy five-star services, premium amenities and
+                personalized care for a seamless everyday living experience.
+              </div>
+            </div>
+          </div>
+          <div class="about-col">
+            <div class="about-image">
+              <img src="./assets/images/del/img-4.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="room-types" class="room-types">
+        <div class="room-inner">
+          <div class="room-heading">
+            <h4>Room Types</h4>
+            <div class="description">
+              Choose from a collection of spacious two-bedroom and three-bedroom
+              serviced residences, thoughtfully designed with generous living
+              areas, fully equipped kitchens, and functional layouts that
+              support both family life and modern urban living
+            </div>
+          </div>
+          <div class="room-main">
+            <div class="filter-section select-tab">
+              <div class="filter-list-button">
+                <div class="filter-button active" data-type="type-1">
+                  2 bedrooms
+                </div>
+                <div class="filter-button" data-type="type-2">3 bedrooms</div>
+              </div>
+            </div>
+            <div class="filter-section-result">
+              <div class="filter-item type-1">
+                <div class="room-wrapper">
+                  <div class="room-column room-info">
+                    <div class="title">Room Amenities</div>
+                    <ul>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button
+                    class="room-column room-image"
+                    type="button"
+                    data-modal-open="modalRoomType-1"
+                  >
+                    <div class="room-image-default">
+                      <div class="image-main">
+                        <div class="image-item">
+                          <img src="./assets/images/del/room-12.jpg" alt="" />
+                        </div>
+                        <div class="image-item">
+                          <img src="./assets/images/del/room-2.jpg" alt="" />
+                        </div>
+                        <div class="image-item">
+                          <img src="./assets/images/del/room-3.jpg" alt="" />
+                        </div>
+                        <div class="image-item">
+                          <img src="./assets/images/del/room-8.jpg" alt="" />
+                          <div class="sum-image">+5</div>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <!-- swiper -->
+                <div
+                  class="custom-modal modal-custom-room"
+                  id="modalRoomType-1"
+                  aria-hidden="true"
+                >
+                  <div class="custom-modal-dialog">
+                    <div class="custom-modal-content">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-modal-close
+                        aria-label="Close"
+                      >
+                        <svg
+                          width="31"
+                          height="31"
+                          viewBox="0 0 31 31"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.353516 0.353516L30.3535 30.3535"
+                            stroke="currentColor"
+                          />
+                          <path
+                            d="M30.3535 0.353516L0.353516 30.3535"
+                            stroke="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <div class="custom-modal-body">
+                        <div class="container-swiper">
+                          <div class="swiper swiper-el-parallax h-100">
+                            <div class="swiper-wrapper h-100">
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-1.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-2.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-3.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-4.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-5.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-6.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-6.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-arrows">
+                              <div class="swiper-arrow swiper-button-prev">
+                                <svg
+                                  width="30"
+                                  height="11"
+                                  viewBox="0 0 30 11"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M29.7072 5.35352L0.707155 5.35352"
+                                    stroke="currentColor"
+                                  />
+                                  <path
+                                    d="M5.70715 0.353516L0.707153 5.35352L5.70715 10.3535"
+                                    stroke="currentColor"
+                                  />
+                                </svg>
+                              </div>
+                              <div class="swiper-arrow swiper-button-next">
+                                <svg
+                                  width="30"
+                                  height="11"
+                                  viewBox="0 0 30 11"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M0 5.35352L29 5.35352"
+                                    stroke="currentColor"
+                                  />
+                                  <path
+                                    d="M24 0.353516L29 5.35352L24 10.3535"
+                                    stroke="currentColor"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                          <div class="swiper-el-thumbnail">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-1.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-2.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-3.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-4.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-5.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-6.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="swiper-slide overflow-hidden">
-                <div class="image">
-                  <img src="./assets/images/del/img-3.webp" alt="">
+              <div class="filter-item type-2">
+                <div class="room-wrapper">
+                  <div class="room-column room-info">
+                    <div class="title">Room Amenities</div>
+                    <ul>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="box">
+                          <div class="icon">
+                            <img src="./assets/images/del/area.svg" alt="" />
+                          </div>
+                          <div class="name">84 - 116m2</div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button
+                    class="room-column room-image"
+                    type="button"
+                    data-modal-open="modalRoomType-2"
+                  >
+                    <div class="room-image-default">
+                      <div class="image-main">
+                        <div class="image-item">
+                          <img src="./assets/images/del/room-12.jpg" alt="" />
+                        </div>
+                        <div class="image-item">
+                          <img src="./assets/images/del/room-2.jpg" alt="" />
+                        </div>
+                        <div class="image-item">
+                          <img src="./assets/images/del/room-3.jpg" alt="" />
+                        </div>
+                        <div class="image-item">
+                          <img src="./assets/images/del/room-8.jpg" alt="" />
+                          <div class="sum-image">+5</div>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+                <!-- swiper -->
+                <div
+                  class="custom-modal modal-custom-room"
+                  id="modalRoomType-2"
+                  aria-hidden="true"
+                >
+                  <div class="custom-modal-dialog">
+                    <div class="custom-modal-content">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-modal-close
+                        aria-label="Close"
+                      >
+                        <svg
+                          width="31"
+                          height="31"
+                          viewBox="0 0 31 31"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M0.353516 0.353516L30.3535 30.3535"
+                            stroke="currentColor"
+                          />
+                          <path
+                            d="M30.3535 0.353516L0.353516 30.3535"
+                            stroke="currentColor"
+                          />
+                        </svg>
+                      </button>
+                      <div class="custom-modal-body">
+                        <div class="container-swiper">
+                          <div class="swiper swiper-el-parallax h-100">
+                            <div class="swiper-wrapper h-100">
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-1.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-2.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-3.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-4.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-5.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide overflow-hidden">
+                                <div class="image">
+                                  <img
+                                    src="./assets/images/del/room-6.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                            <div class="swiper-arrows">
+                              <div class="swiper-arrow swiper-button-prev">
+                                <svg
+                                  width="30"
+                                  height="11"
+                                  viewBox="0 0 30 11"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M29.7072 5.35352L0.707155 5.35352"
+                                    stroke="currentColor"
+                                  />
+                                  <path
+                                    d="M5.70715 0.353516L0.707153 5.35352L5.70715 10.3535"
+                                    stroke="currentColor"
+                                  />
+                                </svg>
+                              </div>
+                              <div class="swiper-arrow swiper-button-next">
+                                <svg
+                                  width="30"
+                                  height="11"
+                                  viewBox="0 0 30 11"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M0 5.35352L29 5.35352"
+                                    stroke="currentColor"
+                                  />
+                                  <path
+                                    d="M24 0.353516L29 5.35352L24 10.3535"
+                                    stroke="currentColor"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                          </div>
+                          <div class="swiper-el-thumbnail">
+                            <div class="swiper-wrapper">
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-1.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-2.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-3.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-4.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                              <div class="swiper-slide">
+                                <div class="thumbnail">
+                                  <img
+                                    src="./assets/images/del/room-5.jpg"
+                                    alt=""
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="services" class="services">
+        <div class="services-inner">
+          <div class="services-heading">
+            <h4>Services</h4>
+            <div class="description">
+              Experience effortless everyday living with thoughtfully curated
+              hotel services by Shilla Hotel operation
+            </div>
+          </div>
+          <div class="services-grid">
+            <div class="services-list" section-fade-each-item>
+              <div class="services-item" data-fade-item>
+                <div class="icon">
+                  <img src="./assets/images/del/icon-1.svg" alt="" />
+                </div>
+                <div class="name">Fully Furnished Apartment</div>
+              </div>
+              <div class="services-item" data-fade-item>
+                <div class="icon">
+                  <img src="./assets/images/del/icon-3.svg" alt="" />
+                </div>
+                <div class="name">High-Speed WiFi</div>
+              </div>
+              <div class="services-item" data-fade-item>
+                <div class="icon">
+                  <img src="./assets/images/del/icon-5.svg" alt="" />
+                </div>
+                <div class="name">Modern And Well-Equiped Kitchen</div>
+              </div>
+              <div class="services-item" data-fade-item>
+                <div class="icon">
+                  <img src="./assets/images/del/icon-7.svg" alt="" />
+                </div>
+                <div class="name">Laundry And Dry Cleaning Service</div>
+              </div>
+            </div>
+            <div class="services-list" section-fade-each-item>
+              <div class="services-item" data-fade-item>
+                <div class="icon">
+                  <img src="./assets/images/del/icon-7.svg" alt="" />
+                </div>
+                <div class="name">Private Residence Lounge</div>
+              </div>
+              <div class="services-item" data-fade-item>
+                <div class="icon">
+                  <img src="./assets/images/del/icon-4.svg" alt="" />
+                </div>
+                <div class="name">24-hour customer service</div>
+              </div>
+              <div class="services-item" data-fade-item>
+                <div class="icon">
+                  <img src="./assets/images/del/icon-6.svg" alt="" />
+                </div>
+                <div class="name">24-hour concierge and security</div>
+              </div>
+              <div class="services-item" data-fade-item>
+                <div class="icon">
+                  <img src="./assets/images/del/icon-8.svg" alt="" />
+                </div>
+                <div class="name">Housekeeping service</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="facilities" class="facilities">
+        <div class="facilities-inner">
+          <div class="facilities-heading">
+            <h4>Featured Amenities</h4>
+
+            <div class="description">
+              Designed to support a balanced lifestyle, residents enjoy access
+              to a curated collection of wellness and leisure facilities
+            </div>
+          </div>
+          <div class="facilities-list position-relative">
+            <div class="swiper swiper-facilities" section-fade-each-item>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="facilities-box" data-fade-item>
+                    <div class="image">
+                      <img src="./assets/images/del/fac-1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="content-top">
+                        <div class="number">01</div>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/del/icon-fac-1.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="content-main">
+                        <div class="name">Outdoor Infinity Pool</div>
+                        <div class="desc">
+                          Swim to the edge of the horizon Swim to the edge of
+                          the horizon
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="facilities-box" data-fade-item>
+                    <div class="image">
+                      <img src="./assets/images/del/fac-1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="content-top">
+                        <div class="number">01</div>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/del/icon-fac-1.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="content-main">
+                        <div class="name">Outdoor Infinity Pool</div>
+                        <div class="desc">Swim to the edge of the horizon</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="facilities-box" data-fade-item>
+                    <div class="image">
+                      <img src="./assets/images/del/fac-1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="content-top">
+                        <div class="number">01</div>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/del/icon-fac-1.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="content-main">
+                        <div class="name">Outdoor Infinity Pool</div>
+                        <div class="desc">Swim to the edge of the horizon</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="facilities-box">
+                    <div class="image">
+                      <img src="./assets/images/del/fac-1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="content-top">
+                        <div class="number">01</div>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/del/icon-fac-1.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="content-main">
+                        <div class="name">Outdoor Infinity Pool</div>
+                        <div class="desc">Swim to the edge of the horizon</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="facilities-box">
+                    <div class="image">
+                      <img src="./assets/images/del/fac-1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="content-top">
+                        <div class="number">01</div>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/del/icon-fac-1.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="content-main">
+                        <div class="name">Outdoor Infinity Pool</div>
+                        <div class="desc">Swim to the edge of the horizon</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="facilities-box">
+                    <div class="image">
+                      <img src="./assets/images/del/fac-1.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                      <div class="content-top">
+                        <div class="number">01</div>
+                        <div class="icon">
+                          <img
+                            src="./assets/images/del/icon-fac-1.svg"
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="content-main">
+                        <div class="name">Outdoor Infinity Pool</div>
+                        <div class="desc">Swim to the edge of the horizon</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="swiper-pagination"></div>
+            <div class="swiper-arrows">
+              <div class="swiper-arrow swiper-button-prev">
+                <svg
+                  width="30"
+                  height="11"
+                  viewBox="0 0 30 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M29.7072 5.35352L0.707155 5.35352"
+                    stroke="currentColor"
+                  />
+                  <path
+                    d="M5.70715 0.353516L0.707153 5.35352L5.70715 10.3535"
+                    stroke="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="swiper-arrow swiper-button-next">
+                <svg
+                  width="30"
+                  height="11"
+                  viewBox="0 0 30 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 5.35352L29 5.35352" stroke="currentColor" />
+                  <path
+                    d="M24 0.353516L29 5.35352L24 10.3535"
+                    stroke="currentColor"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="banner-content-wrapper">
-        <div class="banner-content">
-          <h2 class="banner-content-item active" data-index="0">Welcome to La Résidence</h2>
-          <h2 class="banner-content-item" data-index="1">Living Beyond Comfort</h2>
-          <h2 class="banner-content-item" data-index="2">A New Standard of Home</h2>
-        </div>
+      </section>
+      <section class="foods" id="foods">
+        <div class="foods-inner">
+          <div class="foods-heading">
+            <h4>Food & Beverage</h4>
 
-      </div>
-    </section>
-    <section id="about-us" class="about ">
-      <div class="about-inner">
-        <div class="about-col">
-          <div class="about-box">
-            <div class="logo">
-              <img src="./assets/images/use/logo-full.svg" alt="">
-            </div>
-            <div class="title">La Résidence is a premium serviced apartment offering for modern cosmopolitan living.
-            </div>
             <div class="description">
-              Blending the comfort of home with the attentive service of a luxury hotel, it provides thoughtfully
-              designed living spaces for global professionals and long-stay guests. Operated by Shilla Hotel, the world
-              leading luxury hotel brand, La Résidence offers the warmth of home together with world-class hospitality.
-              Residents enjoy five-star services, premium amenities and personalized care for a seamless everyday living
-              experience.
+              Enjoy a diverse selection of restaurants and cafés within the
+              integrated development, from signature dining destinations to
+              relaxed all-day dining venues. Whether for business meetings,
+              family gatherings or casual everyday meals, a refined culinary
+              experience is always just moments away.
             </div>
           </div>
-        </div>
-        <div class="about-col">
-          <div class="about-image">
-            <img src="./assets/images/del/img-4.jpg" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="room-types" class="room-types ">
-      <div class="room-inner">
-        <div class="room-heading">
-          <h4>Room Types</h4>
-          <div class="description">
-            Choose from a collection of spacious two-bedroom and three-bedroom serviced residences, thoughtfully
-            designed with generous living areas, fully equipped kitchens, and functional layouts that support both
-            family life and modern urban living
-          </div>
-        </div>
-        <div class="room-main">
-          <div class="filter-section select-tab">
-            <div class="filter-list-button">
-              <div class="filter-button active" data-type="type-1">
-                2 bedrooms
-              </div>
-              <div class="filter-button" data-type="type-2">
-                3 bedrooms
-              </div>
-            </div>
-          </div>
-          <div class="filter-section-result">
-            <div class="filter-item type-1">
-              <div class="room-wrapper">
-                <div class="room-column room-info">
-                  <div class="title">Room Amenities</div>
-                  <ul>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-
-                  </ul>
-                </div>
-                <button class="room-column room-image" type="button" data-modal-open="modalRoomType-1">
-                  <div class="room-image-default">
-                    <div class="image-main">
-                      <div class="image-item">
-                        <img src="./assets/images/del/room-12.jpg" alt="">
-                      </div>
-                      <div class="image-item">
-                        <img src="./assets/images/del/room-2.jpg" alt="">
-                      </div>
-                      <div class="image-item">
-                        <img src="./assets/images/del/room-3.jpg" alt="">
-                      </div>
-                      <div class="image-item">
-                        <img src="./assets/images/del/room-8.jpg" alt="">
-                        <div class="sum-image">
-                          +5
-                        </div>
-                      </div>
+          <div class="foods-list position-relative">
+            <div class="swiper swiper-foods">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="foods-box">
+                    <div class="image">
+                      <img src="./assets/images/del/food.jpg" alt="" />
                     </div>
-
-                  </div>
-                </button>
-              </div>
-              <!-- swiper -->
-              <div class="custom-modal modal-custom-room" id="modalRoomType-1" aria-hidden="true">
-                <div class="custom-modal-dialog">
-                  <div class="custom-modal-content">
-                    <button type="button" class="btn-close" data-modal-close aria-label="Close">
-
-                      <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.353516 0.353516L30.3535 30.3535" stroke="currentColor" />
-                        <path d="M30.3535 0.353516L0.353516 30.3535" stroke="currentColor" />
-                      </svg>
-
-                    </button>
-                    <div class="custom-modal-body">
-                      <div class="container-swiper">
-                        <div class="swiper swiper-el-parallax h-100">
-                          <div class="swiper-wrapper h-100">
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-1.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-2.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-3.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-4.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-5.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-6.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-6.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                          <div class="swiper-arrows">
-                            <div class="swiper-arrow swiper-button-prev">
-
-                              <svg width="30" height="11" viewBox="0 0 30 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M29.7072 5.35352L0.707155 5.35352" stroke="currentColor" />
-                                <path d="M5.70715 0.353516L0.707153 5.35352L5.70715 10.3535" stroke="currentColor" />
-                              </svg>
-
-                            </div>
-                            <div class="swiper-arrow swiper-button-next">
-
-                              <svg width="30" height="11" viewBox="0 0 30 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 5.35352L29 5.35352" stroke="currentColor" />
-                                <path d="M24 0.353516L29 5.35352L24 10.3535" stroke="currentColor" />
-                              </svg>
-
-                            </div>
-                          </div>
-                          <!-- <div class="swiper-pagination"></div> -->
-                        </div>
-                        <div class="swiper-el-thumbnail">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-1.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-2.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-3.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-4.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-5.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-6.jpg" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-            <div class="filter-item type-2">
-              <div class="room-wrapper">
-                <div class="room-column room-info">
-                  <div class="title">Room Amenities</div>
-                  <ul>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-                    <li>
-                      <div class="box">
-                        <div class="icon">
-                          <img src="./assets/images/del/area.svg" alt="">
-                        </div>
-                        <div class="name">
-                          84 - 116m2
-                        </div>
-                      </div>
-                    </li>
-
-                  </ul>
-                </div>
-                <button class="room-column room-image" type="button" data-modal-open="modalRoomType-2">
-                  <div class="room-image-default">
-                    <div class="image-main">
-                      <div class="image-item">
-                        <img src="./assets/images/del/room-12.jpg" alt="">
-                      </div>
-                      <div class="image-item">
-                        <img src="./assets/images/del/room-2.jpg" alt="">
-                      </div>
-                      <div class="image-item">
-                        <img src="./assets/images/del/room-3.jpg" alt="">
-                      </div>
-                      <div class="image-item">
-                        <img src="./assets/images/del/room-8.jpg" alt="">
-                        <div class="sum-image">
-                          +5
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </button>
-              </div>
-              <!-- swiper -->
-              <div class="custom-modal modal-custom-room" id="modalRoomType-2" aria-hidden="true">
-                <div class="custom-modal-dialog">
-                  <div class="custom-modal-content">
-                    <button type="button" class="btn-close" data-modal-close aria-label="Close">
-
-                      <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0.353516 0.353516L30.3535 30.3535" stroke="currentColor" />
-                        <path d="M30.3535 0.353516L0.353516 30.3535" stroke="currentColor" />
-                      </svg>
-
-                    </button>
-                    <div class="custom-modal-body">
-                      <div class="container-swiper">
-                        <div class="swiper swiper-el-parallax h-100">
-                          <div class="swiper-wrapper h-100">
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-1.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-2.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-3.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-4.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-5.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide overflow-hidden">
-                              <div class="image">
-                                <img src="./assets/images/del/room-6.jpg" alt="">
-                              </div>
-                            </div>
-
-                          </div>
-                          <div class="swiper-arrows">
-                            <div class="swiper-arrow swiper-button-prev">
-
-                              <svg width="30" height="11" viewBox="0 0 30 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M29.7072 5.35352L0.707155 5.35352" stroke="currentColor" />
-                                <path d="M5.70715 0.353516L0.707153 5.35352L5.70715 10.3535" stroke="currentColor" />
-                              </svg>
-
-                            </div>
-                            <div class="swiper-arrow swiper-button-next">
-
-                              <svg width="30" height="11" viewBox="0 0 30 11" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M0 5.35352L29 5.35352" stroke="currentColor" />
-                                <path d="M24 0.353516L29 5.35352L24 10.3535" stroke="currentColor" />
-                              </svg>
-
-                            </div>
-                          </div>
-                          <!-- <div class="swiper-pagination"></div> -->
-                        </div>
-                        <div class="swiper-el-thumbnail">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-1.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-2.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-3.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-4.jpg" alt="">
-                              </div>
-                            </div>
-                            <div class="swiper-slide">
-                              <div class="thumbnail">
-                                <img src="./assets/images/del/room-5.jpg" alt="">
-                              </div>
-                            </div>
-
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="services" class="services">
-      <div class="services-inner">
-        <div class="services-heading">
-          <h4>Services</h4>
-          <div class="description">
-            Experience effortless everyday living with thoughtfully curated hotel services by Shilla Hotel operation
-          </div>
-        </div>
-        <div class="services-grid">
-          <div class="services-list" section-fade-each-item>
-            <div class="services-item" data-fade-item>
-              <div class="icon">
-                <img src="./assets/images/del/icon-1.svg" alt="">
-              </div>
-              <div class="name">Fully Furnished Apartment</div>
-            </div>
-            <div class="services-item" data-fade-item>
-              <div class="icon">
-                <img src="./assets/images/del/icon-3.svg" alt="">
-              </div>
-              <div class="name">High-Speed WiFi</div>
-            </div>
-            <div class="services-item" data-fade-item>
-              <div class="icon">
-                <img src="./assets/images/del/icon-5.svg" alt="">
-              </div>
-              <div class="name">Modern And Well-Equiped Kitchen</div>
-            </div>
-            <div class="services-item" data-fade-item>
-              <div class="icon">
-                <img src="./assets/images/del/icon-7.svg" alt="">
-              </div>
-              <div class="name">Laundry And Dry Cleaning Service</div>
-            </div>
-
-          </div>
-          <div class="services-list" section-fade-each-item>
-            <div class="services-item" data-fade-item>
-              <div class="icon">
-                <img src="./assets/images/del/icon-7.svg" alt="">
-              </div>
-              <div class="name">Private Residence Lounge</div>
-            </div>
-            <div class="services-item" data-fade-item>
-              <div class="icon">
-                <img src="./assets/images/del/icon-4.svg" alt="">
-              </div>
-              <div class="name">24-hour customer service</div>
-            </div>
-            <div class="services-item" data-fade-item>
-              <div class="icon">
-                <img src="./assets/images/del/icon-6.svg" alt="">
-              </div>
-              <div class="name">24-hour concierge and security</div>
-            </div>
-            <div class="services-item" data-fade-item>
-              <div class="icon">
-                <img src="./assets/images/del/icon-8.svg" alt="">
-              </div>
-              <div class="name">Housekeeping service</div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <section id="facilities" class="facilities ">
-      <div class="facilities-inner">
-        <div class="facilities-heading">
-          <h4>Featured Amenities</h4>
-
-          <div class="description">
-            Designed to support a balanced lifestyle, residents enjoy access to a curated collection of wellness and
-            leisure facilities
-          </div>
-        </div>
-        <div class="facilities-list position-relative">
-          <div class="swiper swiper-facilities" section-fade-each-item>
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="facilities-box " data-fade-item>
-                  <div class="image">
-                    <img src="./assets/images/del/fac-1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="content-top">
-                      <div class="number">01</div>
-                      <div class="icon">
-                        <img src="./assets/images/del/icon-fac-1.svg" alt="">
-                      </div>
-                    </div>
-                    <div class="content-main">
+                    <div class="content">
                       <div class="name">Outdoor Infinity Pool</div>
-                      <div class="desc">Swim to the edge of the horizon Swim to the edge of the horizon</div>
+                      <div class="d-flex justify-content-between desc gap-2">
+                        <p>Swim to the edge of the horizon</p>
+                        <div class="location">Location:2F</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="facilities-box" data-fade-item>
-                  <div class="image">
-                    <img src="./assets/images/del/fac-1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="content-top">
-                      <div class="number">01</div>
-                      <div class="icon">
-                        <img src="./assets/images/del/icon-fac-1.svg" alt="">
-                      </div>
+                <div class="swiper-slide">
+                  <div class="foods-box">
+                    <div class="image">
+                      <img src="./assets/images/del/food.jpg" alt="" />
                     </div>
-                    <div class="content-main">
+                    <div class="content">
                       <div class="name">Outdoor Infinity Pool</div>
-                      <div class="desc">Swim to the edge of the horizon</div>
+                      <div class="d-flex justify-content-between desc gap-2">
+                        <p>Swim to the edge of the horizon</p>
+                        <div class="location">Location:2F</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="facilities-box" data-fade-item>
-                  <div class="image">
-                    <img src="./assets/images/del/fac-1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="content-top">
-                      <div class="number">01</div>
-                      <div class="icon">
-                        <img src="./assets/images/del/icon-fac-1.svg" alt="">
-                      </div>
+                <div class="swiper-slide">
+                  <div class="foods-box">
+                    <div class="image">
+                      <img src="./assets/images/del/food.jpg" alt="" />
                     </div>
-                    <div class="content-main">
+                    <div class="content">
                       <div class="name">Outdoor Infinity Pool</div>
-                      <div class="desc">Swim to the edge of the horizon</div>
+                      <div class="d-flex justify-content-between desc gap-2">
+                        <p>Swim to the edge of the horizon</p>
+                        <div class="location">Location:2F</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="facilities-box">
-                  <div class="image">
-                    <img src="./assets/images/del/fac-1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="content-top">
-                      <div class="number">01</div>
-                      <div class="icon">
-                        <img src="./assets/images/del/icon-fac-1.svg" alt="">
-                      </div>
+                <div class="swiper-slide">
+                  <div class="foods-box">
+                    <div class="image">
+                      <img src="./assets/images/del/food.jpg" alt="" />
                     </div>
-                    <div class="content-main">
+                    <div class="content">
                       <div class="name">Outdoor Infinity Pool</div>
-                      <div class="desc">Swim to the edge of the horizon</div>
+                      <div class="d-flex justify-content-between desc gap-2">
+                        <p>Swim to the edge of the horizon</p>
+                        <div class="location">Location:2F</div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="facilities-box">
-                  <div class="image">
-                    <img src="./assets/images/del/fac-1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="content-top">
-                      <div class="number">01</div>
-                      <div class="icon">
-                        <img src="./assets/images/del/icon-fac-1.svg" alt="">
-                      </div>
+                <div class="swiper-slide">
+                  <div class="foods-box">
+                    <div class="image">
+                      <img src="./assets/images/del/food.jpg" alt="" />
                     </div>
-                    <div class="content-main">
+                    <div class="content">
                       <div class="name">Outdoor Infinity Pool</div>
-                      <div class="desc">Swim to the edge of the horizon</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="facilities-box">
-                  <div class="image">
-                    <img src="./assets/images/del/fac-1.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="content-top">
-                      <div class="number">01</div>
-                      <div class="icon">
-                        <img src="./assets/images/del/icon-fac-1.svg" alt="">
+                      <div class="d-flex justify-content-between desc gap-2">
+                        <p>Swim to the edge of the horizon</p>
+                        <div class="location">Location:2F</div>
                       </div>
-                    </div>
-                    <div class="content-main">
-                      <div class="name">Outdoor Infinity Pool</div>
-                      <div class="desc">Swim to the edge of the horizon</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-arrows">
-            <div class="swiper-arrow swiper-button-prev">
-
-              <svg width="30" height="11" viewBox="0 0 30 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M29.7072 5.35352L0.707155 5.35352" stroke="currentColor" />
-                <path d="M5.70715 0.353516L0.707153 5.35352L5.70715 10.3535" stroke="currentColor" />
-              </svg>
-
-            </div>
-            <div class="swiper-arrow swiper-button-next">
-
-              <svg width="30" height="11" viewBox="0 0 30 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 5.35352L29 5.35352" stroke="currentColor" />
-                <path d="M24 0.353516L29 5.35352L24 10.3535" stroke="currentColor" />
-              </svg>
-
+            <div class="swiper-pagination"></div>
+            <div class="swiper-arrows">
+              <div class="swiper-arrow swiper-button-prev">
+                <svg
+                  width="30"
+                  height="11"
+                  viewBox="0 0 30 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M29.7072 5.35352L0.707155 5.35352"
+                    stroke="currentColor"
+                  />
+                  <path
+                    d="M5.70715 0.353516L0.707153 5.35352L5.70715 10.3535"
+                    stroke="currentColor"
+                  />
+                </svg>
+              </div>
+              <div class="swiper-arrow swiper-button-next">
+                <svg
+                  width="30"
+                  height="11"
+                  viewBox="0 0 30 11"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M0 5.35352L29 5.35352" stroke="currentColor" />
+                  <path
+                    d="M24 0.353516L29 5.35352L24 10.3535"
+                    stroke="currentColor"
+                  />
+                </svg>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="foods" id="foods">
-      <div class="foods-inner">
-        <div class="foods-heading">
-          <h4>Food & Beverage</h4>
-
-          <div class="description">
-            Enjoy a diverse selection of restaurants and cafés within the integrated development, from signature dining
-            destinations to relaxed all-day dining venues. Whether for business meetings, family gatherings or casual
-            everyday meals, a refined culinary experience is always just moments away.
+      </section>
+      <section class="contact-section">
+        <div class="contact-inner">
+          <div class="contact-background">
+            <img src="./assets/images/del/img-3.webp" alt="" />
           </div>
-        </div>
-        <div class="foods-list position-relative">
-          <div class="swiper swiper-foods">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="foods-box">
-                  <div class="image">
-                    <img src="./assets/images/del/food.jpg" alt="">
+          <div class="contact-wrapper" section-fade-each-item>
+            <div class="contact-sale">
+              <div class="title">Sale</div>
+              <ul class="contact-info">
+                <li>
+                  <div class="contact-item">
+                    <div class="label">Hotline</div>
+                    <a href="tel:+84123456789" class="phone">0247 301 0999</a>
                   </div>
-                  <div class="content">
-                    <div class="name">Outdoor Infinity Pool</div>
-                    <div class="d-flex justify-content-between desc gap-2">
-                      <p>Swim to the edge of the horizon</p>
-                      <div class="location">Location:2F</div>
-                    </div>
+                </li>
+                <li>
+                  <div class="contact-item">
+                    <div class="label">Email</div>
+                    <a
+                      href="mailto:info@laresidence.com"
+                      target="_blank"
+                      class="email"
+                    >
+                      duty.laresidence@laresidencehanoi.com
+                    </a>
                   </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="foods-box">
-                  <div class="image">
-                    <img src="./assets/images/del/food.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="name">Outdoor Infinity Pool</div>
-                    <div class="d-flex justify-content-between desc gap-2">
-                      <p>Swim to the edge of the horizon</p>
-                      <div class="location">Location:2F</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="foods-box">
-                  <div class="image">
-                    <img src="./assets/images/del/food.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="name">Outdoor Infinity Pool</div>
-                    <div class="d-flex justify-content-between desc gap-2">
-                      <p>Swim to the edge of the horizon</p>
-                      <div class="location">Location:2F</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="foods-box">
-                  <div class="image">
-                    <img src="./assets/images/del/food.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="name">Outdoor Infinity Pool</div>
-                    <div class="d-flex justify-content-between desc gap-2">
-                      <p>Swim to the edge of the horizon</p>
-                      <div class="location">Location:2F</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="foods-box">
-                  <div class="image">
-                    <img src="./assets/images/del/food.jpg" alt="">
-                  </div>
-                  <div class="content">
-                    <div class="name">Outdoor Infinity Pool</div>
-                    <div class="d-flex justify-content-between desc gap-2">
-                      <p>Swim to the edge of the horizon</p>
-                      <div class="location">Location:2F</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-arrows">
-            <div class="swiper-arrow swiper-button-prev">
-
-              <svg width="30" height="11" viewBox="0 0 30 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M29.7072 5.35352L0.707155 5.35352" stroke="currentColor" />
-                <path d="M5.70715 0.353516L0.707153 5.35352L5.70715 10.3535" stroke="currentColor" />
-              </svg>
-
-            </div>
-            <div class="swiper-arrow swiper-button-next">
-
-              <svg width="30" height="11" viewBox="0 0 30 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 5.35352L29 5.35352" stroke="currentColor" />
-                <path d="M24 0.353516L29 5.35352L24 10.3535" stroke="currentColor" />
-              </svg>
-
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="contact-section ">
-      <div class="contact-inner">
-        <div class="contact-background">
-          <img src="./assets/images/del/img-3.webp" alt="">
-        </div>
-        <div class="contact-wrapper" section-fade-each-item>
-
-          <div class="contact-sale">
-            <div class="title">Sale</div>
-            <ul class="contact-info">
-              <li>
-                <div class="contact-item">
-                  <div class="label">Hotline</div>
-                  <a href="tel:+84123456789" class="phone ">0247 301 0999</a>
-                </div>
-              </li>
-              <li>
-                <div class="contact-item">
-                  <div class="label">Email</div>
-                  <a href="mailto:info@laresidence.com" target="_blank" class="email ">
-                    duty.laresidence@laresidencehanoi.com </a>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Modal Book -->
-    <div class="modal  fade modal-custom" data-lenis-prevent id="modalBook" data-bs-backdrop="static"
-      data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalBookLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalBookLabel">Booking</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-              <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.353516 0.353516L30.3535 30.3535" stroke="currentColor" />
-                <path d="M30.3535 0.353516L0.353516 30.3535" stroke="currentColor" />
-              </svg>
-
-            </button>
-          </div>
-          <div class="modal-body">
-            <form action="">
-              <div class="form-row">
-                <div class="form-input">
-                  <input type="text" name="name" class="required" placeholder=" ">
-                  <label>Name<span>*</span></label>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-input">
-                  <input type="text" name="company" placeholder=" ">
-                  <label>Company</label>
-                </div>
-
-              </div>
-              <div class="form-row">
-                <div class="form-input">
-                  <input type="tel" name="phone" class="required" placeholder=" ">
-                  <label>Phone<span>*</span></label>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-input">
-                  <input type="email" name="email" class="required" placeholder=" ">
-                  <label>Email<span>*</span></label>
-                </div>
-              </div>
-              <div class="form-row ">
-                <div class="form-input textarea">
-                  <textarea name="questions" class="" placeholder=" " rows="3"></textarea>
-                  <label>Questions</label>
-                </div>
-              </div>
-              <button type="submit" class="text-uppercase btn-general color-white" email-recipient="">
-                book now
+      </section>
+      <!-- Modal Book -->
+      <div
+        class="modal fade modal-custom"
+        data-lenis-prevent
+        id="modalBook"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalBookLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalBookLabel">Booking</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <svg
+                  width="31"
+                  height="31"
+                  viewBox="0 0 31 31"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.353516 0.353516L30.3535 30.3535"
+                    stroke="currentColor"
+                  />
+                  <path
+                    d="M30.3535 0.353516L0.353516 30.3535"
+                    stroke="currentColor"
+                  />
+                </svg>
               </button>
-              <div class="form-message text-center">Please be informed that your request has been received.
-                Our team will contact you promptly. </div>
-            </form>
+            </div>
+            <div class="modal-body">
+              <form action="">
+                <div class="form-row">
+                  <div class="form-input">
+                    <input
+                      type="text"
+                      name="name"
+                      class="required"
+                      placeholder=" "
+                    />
+                    <label>Name<span>*</span></label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-input">
+                    <input type="text" name="company" placeholder=" " />
+                    <label>Company</label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-input">
+                    <input
+                      type="tel"
+                      name="phone"
+                      class="required"
+                      placeholder=" "
+                    />
+                    <label>Phone<span>*</span></label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-input">
+                    <input
+                      type="email"
+                      name="email"
+                      class="required"
+                      placeholder=" "
+                    />
+                    <label>Email<span>*</span></label>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-input textarea">
+                    <textarea
+                      name="questions"
+                      class=""
+                      placeholder=" "
+                      rows="3"
+                    ></textarea>
+                    <label>Questions</label>
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="text-uppercase btn-general color-white"
+                  email-recipient=""
+                >
+                  book now
+                </button>
+                <div class="form-message text-center">
+                  Please be informed that your request has been received. Our
+                  team will contact you promptly.
+                </div>
+              </form>
+            </div>
           </div>
-
         </div>
       </div>
-    </div>
-    <!-- modal contact -->
-    <div class="modal fade modal-custom" data-lenis-prevent id="modalContact" data-bs-backdrop="static"
-      data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalContactLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="modalContactLabel">Contact</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-
-              <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0.353516 0.353516L30.3535 30.3535" stroke="currentColor" />
-                <path d="M30.3535 0.353516L0.353516 30.3535" stroke="currentColor" />
-              </svg>
-
-            </button>
+      <!-- modal contact -->
+      <div
+        class="modal fade modal-custom"
+        data-lenis-prevent
+        id="modalContact"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalContactLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalContactLabel">Contact</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                <svg
+                  width="31"
+                  height="31"
+                  viewBox="0 0 31 31"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M0.353516 0.353516L30.3535 30.3535"
+                    stroke="currentColor"
+                  />
+                  <path
+                    d="M30.3535 0.353516L0.353516 30.3535"
+                    stroke="currentColor"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="modal-body">
+              <ul class="contact-info">
+                <li>
+                  <div class="contact-item">
+                    <div class="label">Hotline</div>
+                    <a href="tel:+84123456789" class="phone">0247 301 0999</a>
+                  </div>
+                </li>
+                <li>
+                  <div class="contact-item">
+                    <div class="label">Email</div>
+                    <a
+                      href="mailto:info@laresidence.com"
+                      target="_blank"
+                      class="email"
+                      >duty.laresidence@laresidencehanoi.com
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="modal-body">
-            <ul class="contact-info">
-              <li>
-                <div class="contact-item">
-                  <div class="label">Hotline</div>
-                  <a href="tel:+84123456789" class="phone ">0247 301 0999</a>
-                </div>
-              </li>
-              <li>
-                <div class="contact-item">
-                  <div class="label">Email</div>
-                  <a href="mailto:info@laresidence.com" target="_blank"
-                    class="email ">duty.laresidence@laresidencehanoi.com </a>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-
         </div>
       </div>
-    </div>
-  </main>
-  <!-- layout -->
-  <!-- footer -->
-  <script>
-    fetch("./components/footer.html")
-      .then((response) => response.text())
-      .then((data) => {
-        document.getElementById("footer").innerHTML = data;
-      });
-  </script>
+    </main>
+    <!-- layout -->
+    <!-- footer -->
+    <script>
+      fetch("./components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
 
+    <footer id="footer"></footer>
+    <!-- end footer -->
+    <!-- end layout -->
 
-  <footer id="footer"></footer>
-  <!-- end footer -->
-  <!-- end layout -->
+    <script src="./assets/libs/jquery-3.7.1.js"></script>
+    <script src="./assets/libs/lenis.min.js"></script>
+    <script src="./assets/libs/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/ScrollToPlugin.min.js"></script>
+    <script src="./assets/libs/ScrollTrigger.min.js"></script>
+    <script src="./assets/libs/SplitText.min.js"></script>
+    <script src="./assets/libs/bootstrap.bundle.min.js"></script>
+    <script src="./assets/libs/swiper-bundle.min.js"></script>
+    <script src="./assets/libs/moment.min.js"></script>
+    <script src="./assets/libs/lightpick.min.js"></script>
+    <!-- import custom js -->
+    <script type="module" src="./assets/main/js/script.min.js"></script>
+    <!-- <script type="module" src="./assets/main/js/home.min.js"></script> -->
 
-  <script src="./assets/libs/jquery-3.7.1.js"></script>
-  <script src="./assets/libs/lenis.min.js"></script>
-  <script src="./assets/libs/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/ScrollToPlugin.min.js"></script>
-  <script src="./assets/libs/ScrollTrigger.min.js"></script>
-  <script src="./assets/libs/SplitText.min.js"></script>
-  <script src="./assets/libs/bootstrap.bundle.min.js"></script>
-  <script src="./assets/libs/swiper-bundle.min.js"></script>
-  <script src="./assets/libs/moment.min.js"></script>
-  <script src="./assets/libs/lightpick.min.js"></script>
-  <!-- import custom js -->
-  <script type="module" src="./assets/main/js/script.min.js"></script>
-  <!-- <script type="module" src="./assets/main/js/home.min.js"></script> -->
-
-  <!-- end import custom js -->
-</body>
-
+    <!-- end import custom js -->
+  </body>
 </html>
 <!-- https://gsap.com/community/forums/topic/30338-circular-carouselslider/ -->

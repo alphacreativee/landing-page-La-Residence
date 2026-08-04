@@ -932,7 +932,7 @@ body {
 }
 .modal-custom .modal-title {
   font-size: 30px;
-  line-height: 39px;
+  line-height: 30px;
   color: var(--color-primary);
   font-weight: 400;
 }
@@ -942,6 +942,10 @@ body {
   align-items: center;
   justify-content: center;
   opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.modal-custom .btn-close:hover {
+  opacity: 0.7;
 }
 .modal-custom .btn-close:focus {
   box-shadow: none;
@@ -1098,7 +1102,7 @@ body {
   width: 100px;
   padding: 0 20px;
   margin: 0;
-  transform: translate(0);
+  transform: translate(0, -50%);
   transition: all 0.4s ease;
 }
 .modal-custom-room .container-swiper .swiper-arrow:hover {
@@ -1226,6 +1230,10 @@ body {
   border: none;
   cursor: pointer;
   color: var(--color-secondary);
+  transition: opacity 0.3s ease;
+}
+.custom-modal .btn-close:hover {
+  opacity: 0.7;
 }
 
 /* Chặn scroll nền khi modal mở, tự set bằng JS thay vì Bootstrap */
@@ -2061,6 +2069,7 @@ body.custom-modal-open {
   justify-content: center;
   align-items: center;
   background-color: rgba(150, 86, 62, 0.95);
+  backdrop-filter: blur(10px);
 }
 .room-types .container-swiper {
   height: 39.375vw;
@@ -2068,6 +2077,7 @@ body.custom-modal-open {
 
 .modal.modal-custom {
   background-color: rgba(150, 86, 62, 0.85);
+  backdrop-filter: blur(10px);
 }
 
 .facilities {
@@ -2187,7 +2197,7 @@ body.custom-modal-open {
   line-height: 25px;
   letter-spacing: 0.21em;
   color: var(--color-primary);
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   text-transform: uppercase;
 }
 .facilities-box .content-main .desc {
@@ -2365,6 +2375,7 @@ body.custom-modal-open {
   text-transform: uppercase;
   color: var(--color-fourth);
   letter-spacing: 0.1em;
+  padding-bottom: 12px;
 }
 .foods-box .content .desc {
   font-size: 14px;
@@ -2504,6 +2515,7 @@ body.custom-modal-open {
 }
 .contact-section .contact-sale {
   background-color: rgba(150, 86, 62, 0.8);
+  backdrop-filter: blur(10px);
   padding: 32px;
   display: flex;
   flex-direction: column;

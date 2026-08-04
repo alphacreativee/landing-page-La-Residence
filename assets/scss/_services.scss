@@ -69,6 +69,22 @@
       border-right: none;
       border-bottom: 1px solid var(--color-fourth);
       gap: 12px;
+      &:nth-child(odd) {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: calc(100% - 20px);
+          background-color: var(--color-fourth);
+        }
+      }
+    }
+    &:last-child {
+      border-right: none;
     }
     .icon {
       flex-shrink: 0;

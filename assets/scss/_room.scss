@@ -182,6 +182,9 @@
   }
   .container-swiper {
     height: 39.375vw;
+    @media (max-width: 767px) {
+      height: 70vw;
+    }
   }
 }
 .modal.modal-custom {

@@ -1083,8 +1083,14 @@ body {
 .modal-custom-room .modal-content {
   position: relative;
 }
+@media (max-width: 767px) {
+  .modal-custom-room .custom-modal-body {
+    width: calc(100% - 40px);
+  }
+}
 .modal-custom-room .container-swiper {
   position: relative;
+  overflow: unset;
 }
 .modal-custom-room .container-swiper .swiper::before {
   content: "";
@@ -1098,7 +1104,7 @@ body {
   pointer-events: none;
 }
 .modal-custom-room .container-swiper .swiper-pagination {
-  bottom: 24px;
+  bottom: -40px;
 }
 .modal-custom-room .container-swiper .swiper-pagination .swiper-pagination-bullet {
   width: 8px;
@@ -1136,10 +1142,20 @@ body {
   justify-content: flex-start;
   left: 20px;
 }
+@media (max-width: 767px) {
+  .modal-custom-room .container-swiper .swiper-arrow.swiper-button-prev {
+    left: -10px;
+  }
+}
 .modal-custom-room .container-swiper .swiper-arrow.swiper-button-next {
   display: flex;
   justify-content: flex-end;
   right: 20px;
+}
+@media (max-width: 767px) {
+  .modal-custom-room .container-swiper .swiper-arrow.swiper-button-next {
+    right: -10px;
+  }
 }
 .modal-custom-room .container-swiper .swiper-el-thumbnail {
   display: none;
@@ -1238,6 +1254,11 @@ body {
 .custom-modal-body {
   flex: 1;
   overflow: hidden;
+}
+@media (max-width: 767px) {
+  .custom-modal-body {
+    overflow: unset;
+  }
 }
 
 .custom-modal .btn-close {
@@ -2088,6 +2109,11 @@ body.custom-modal-open {
 }
 .room-types .container-swiper {
   height: 39.375vw;
+}
+@media (max-width: 767px) {
+  .room-types .container-swiper {
+    height: 70vw;
+  }
 }
 
 .modal.modal-custom {
